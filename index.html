@@ -2873,12 +2873,17 @@
 
     .footer-social {
       display: flex;
-      gap: 16px;
+      gap: 12px;
     }
 
     .footer-social a {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
       color: var(--text-muted);
-      transition: color .2s, transform .2s;
+      transition: color .2s, transform .2s, border-color .2s, background .2s;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -2886,12 +2891,13 @@
 
     .footer-social a:hover {
       color: var(--accent);
+      border-color: var(--accent);
       transform: translateY(-2px);
     }
 
     .footer-social svg {
-      width: 18px;
-      height: 18px;
+      width: 16px;
+      height: 16px;
     }
 
     @media (max-width: 768px) {
@@ -4591,6 +4597,11 @@
     }
 
     @media (max-width: 768px) {
+      .review-marquee-container {
+        mask-image: none;
+        -webkit-mask-image: none;
+      }
+
       .review-card {
         width: 320px;
       }
