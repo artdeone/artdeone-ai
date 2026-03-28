@@ -5,7 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Sign In | ART de ONE</title>
-  <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/dy7vubtji/image/upload/v1774516236/favicon_epuxyi.svg">
+  <link rel="icon" type="image/svg+xml"
+    href="https://res.cloudinary.com/dy7vubtji/image/upload/v1774516236/favicon_epuxyi.svg">
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Instrument+Serif:ital@0;1&display=swap"
     rel="stylesheet" />
@@ -272,8 +273,8 @@
 
   <nav class="nav">
     <a href="index.html">
-      <img src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774331383/ADOAI_ic7bau.png" alt="ART de ONE"
-        class="nav-logo">
+      <img src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774451883/ADO_AI-01_or74hj.png" alt="ART de ONE"
+        class="nav-logo" id="navLogo">
     </a>
     <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
       <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -355,17 +356,25 @@
     const moonSvg = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
     const sunSvg = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
 
+    const lightLogo = 'https://res.cloudinary.com/dy7vubtji/image/upload/v1774451883/ADO_AI-02_lnmqny.png';
+    const darkLogo = 'https://res.cloudinary.com/dy7vubtji/image/upload/v1774451883/ADO_AI-01_or74hj.png';
+    function syncLogo() {
+      const logo = document.getElementById('navLogo');
+      if (logo) logo.src = isDark() ? darkLogo : lightLogo;
+    }
     function isDark() { return document.documentElement.dataset.theme === 'dark'; }
     function setTheme(dark) {
       document.documentElement.dataset.theme = dark ? 'dark' : 'light';
       localStorage.setItem('ado_theme', dark ? 'dark' : 'light');
       document.getElementById('themeBtn').innerHTML = dark ? sunSvg : moonSvg;
+      syncLogo();
     }
 
     const savedTheme = localStorage.getItem('ado_theme');
     if (savedTheme) setTheme(savedTheme === 'dark');
     else setTheme(true);
     document.getElementById('themeBtn').innerHTML = isDark() ? sunSvg : moonSvg;
+    syncLogo();
     document.getElementById('themeBtn').addEventListener('click', () => setTheme(!isDark()));
   </script>
 
