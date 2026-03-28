@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payment Orders | Admin | ART de ONE</title>
+  <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/dy7vubtji/image/upload/v1774516236/favicon_epuxyi.svg">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0c0d0c;
+      --bg-alt: #141512;
+      --surface: #22231e;
+      --border: #2a2b26;
+      --text: #eceadf;
+      --text-sub: #a3a596;
+      --accent: #a7e169;
+      --accent-dark: #8cca50;
+      --danger: #f97316;
+      --radius: 18px;
+      --shadow: 0 20px 48px rgba(0,0,0,.28);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0; min-height: 100vh;
+      font-family: 'DM Sans', sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(167,225,105,.12), transparent 25%),
+        var(--bg);
+      color: var(--text);
+      padding: 32px 18px 48px;
+    }
+
+    .wrap { max-width: 1080px; margin: 0 auto; }
+
+    .hero, .panel, .gate {
+      background: rgba(34,35,30,.92);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero { padding: 28px; margin-bottom: 18px; }
+
+    .eyebrow {
+      color: var(--accent);
+      font-size: 11px; letter-spacing: .14em;
+      text-transform: uppercase; font-weight: 700; margin-bottom: 10px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 1; font-weight: 400;
+    }
+
+    .sub { margin: 0; color: var(--text-sub); line-height: 1.7; max-width: 62ch; }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Gate ── */
+    .gate {
+      max-width: 440px; margin: 120px auto; padding: 48px; text-align: center;
+    }
+    .gate h2 { font-family: 'Instrument Serif', serif; font-size: 28px; margin-bottom: 12px; }
+    .gate p { color: var(--text-sub); font-size: 14px; }
+    .gate .spinner { margin: 24px auto; }
+
+    /* ── Filter tabs ── */
+    .tabs {
+      display: flex; gap: 6px; margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .tab {
+      padding: 7px 18px; border-radius: 9999px;
+      font-size: 13px; font-weight: 600;
+      background: rgba(255,255,255,.04); border: 1px solid var(--border);
+      color: var(--text-sub); cursor: pointer;
+      transition: all .2s; display: flex; align-items: center; gap: 6px;
+    }
+    .tab:hover { border-color: var(--text-sub); color: var(--text); }
+    .tab.active { background: var(--accent); color: #1b1c18; border-color: var(--accent); }
+    .tab .count {
+      font-size: 11px; font-weight: 700;
+      background: rgba(0,0,0,.15); padding: 1px 7px; border-radius: 9999px;
+    }
+
+    /* ── Order cards ── */
+    .orders-list { display: grid; gap: 14px; }
+
+    .order-card {
+      background: rgba(34,35,30,.92); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px;
+      display: grid; grid-template-columns: 1fr auto; gap: 16px;
+      transition: border-color .2s;
+    }
+    .order-card:hover { border-color: rgba(255,255,255,.08); }
+
+    .order-main { min-width: 0; }
+    .order-top { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 8px; }
+
+    .order-user {
+      font-size: 13px; color: var(--text-sub);
+      font-family: 'DM Sans', monospace;
+      background: rgba(255,255,255,.04); padding: 2px 8px; border-radius: 8px;
+      border: 1px solid var(--border); word-break: break-all;
+    }
+
+    .badge {
+      font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+      padding: 3px 10px; border-radius: 9999px; white-space: nowrap;
+    }
+    .badge-pending { background: #3a3520; color: #f0ad00; }
+    .badge-approved { background: #1a3520; color: #4ade80; }
+    .badge-rejected { background: #3a1a1a; color: #f87171; }
+
+    .badge-kbzpay { background: rgba(0,102,204,.2); color: #5ca8ff; }
+    .badge-ayapay { background: rgba(204,0,0,.2); color: #ff7070; }
+    .badge-uabpay { background: rgba(0,102,51,.2); color: #4ade80; }
+    .badge-wavepay { background: rgba(240,173,0,.2); color: #fcd34d; }
+
+    .order-details {
+      font-size: 14px; color: var(--text-sub); line-height: 1.8;
+    }
+    .order-details strong { color: var(--text); }
+
+    .order-amount {
+      font-size: 20px; font-weight: 700; color: var(--accent);
+    }
+
+    .order-date { font-size: 12px; color: var(--text-sub); margin-top: 8px; }
+
+    .order-note {
+      font-size: 12px; color: var(--text-sub); margin-top: 6px;
+      padding: 6px 10px; background: rgba(255,255,255,.03); border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+
+    /* ── Screenshot ── */
+    .order-side { display: flex; flex-direction: column; align-items: flex-end; gap: 10px; }
+
+    .screenshot-thumb {
+      width: 100px; height: 100px; border-radius: 12px;
+      object-fit: cover; cursor: pointer; border: 1px solid var(--border);
+      transition: transform .2s, box-shadow .2s;
+    }
+    .screenshot-thumb:hover { transform: scale(1.05); box-shadow: var(--shadow); }
+
+    /* ── Buttons ── */
+    .btn-group { display: flex; gap: 8px; }
+
+    .btn {
+      padding: 8px 18px; border-radius: 9999px;
+      font-family: inherit; font-size: 13px; font-weight: 600;
+      cursor: pointer; border: none; transition: all .2s;
+    }
+    .btn-approve { background: #16a34a; color: #fff; }
+    .btn-approve:hover { background: #15803d; }
+    .btn-reject { background: rgba(248,113,113,.15); color: #f87171; border: 1px solid rgba(248,113,113,.2); }
+    .btn-reject:hover { background: rgba(248,113,113,.25); }
+    .btn-back {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 16px; border-radius: 9999px;
+      background: rgba(255,255,255,.04); border: 1px solid var(--border);
+      color: var(--text-sub); font-family: inherit; font-size: 13px; font-weight: 500;
+      cursor: pointer; transition: all .2s; margin-bottom: 18px;
+    }
+    .btn-back:hover { border-color: var(--text-sub); color: var(--text); }
+
+    /* ── Modal ── */
+    .modal-overlay {
+      position: fixed; inset: 0; z-index: 1000;
+      background: rgba(0,0,0,.85); display: none;
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .modal-overlay.open { display: flex; }
+    .modal-img {
+      max-width: 90vw; max-height: 85vh; border-radius: 12px;
+      box-shadow: 0 24px 64px rgba(0,0,0,.6);
+    }
+    .modal-close {
+      position: fixed; top: 20px; right: 20px;
+      width: 40px; height: 40px; border-radius: 50%;
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15);
+      color: #fff; font-size: 20px; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .modal-close:hover { background: rgba(255,255,255,.2); }
+
+    /* ── Reject modal ── */
+    .reject-modal {
+      position: fixed; inset: 0; z-index: 1001;
+      background: rgba(0,0,0,.75); display: none;
+      align-items: center; justify-content: center; padding: 24px;
+    }
+    .reject-modal.open { display: flex; }
+    .reject-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 24px; width: 100%; max-width: 420px;
+    }
+    .reject-box h3 { font-size: 18px; margin-bottom: 12px; }
+    .reject-box textarea {
+      width: 100%; min-height: 80px; padding: 10px; border-radius: 10px;
+      background: var(--bg-alt); border: 1px solid var(--border);
+      color: var(--text); font-family: inherit; font-size: 14px;
+      resize: vertical; margin-bottom: 16px;
+    }
+    .reject-box textarea:focus { outline: none; border-color: var(--accent); }
+    .reject-box .btn-row { display: flex; gap: 8px; justify-content: flex-end; }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed; top: 20px; right: 20px; z-index: 2000;
+      padding: 14px 22px; border-radius: 12px;
+      font-size: 14px; font-weight: 500; color: #fff;
+      transform: translateX(120%); transition: transform .3s cubic-bezier(.16,1,.3,1);
+      box-shadow: 0 12px 44px rgba(0,0,0,.5);
+    }
+    .toast.show { transform: translateX(0); }
+    .toast.success { background: #16a34a; }
+    .toast.error { background: #dc2626; }
+
+    /* ── Loading / Empty ── */
+    .loading { text-align: center; padding: 48px; color: var(--text-sub); }
+    .spinner {
+      width: 32px; height: 32px; border: 3px solid var(--border);
+      border-top-color: var(--accent); border-radius: 50%;
+      animation: spin .7s linear infinite; margin: 0 auto 12px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .empty-state { text-align: center; padding: 64px 24px; color: var(--text-sub); }
+    .empty-state .icon { font-size: 48px; margin-bottom: 12px; }
+
+    /* ── Stats row ── */
+    .stats {
+      display: flex; gap: 12px; margin-bottom: 18px; flex-wrap: wrap;
+    }
+    .stat-card {
+      flex: 1; min-width: 120px;
+      background: rgba(34,35,30,.92); border: 1px solid var(--border);
+      border-radius: 14px; padding: 16px; text-align: center;
+    }
+    .stat-num { font-size: 28px; font-weight: 700; }
+    .stat-num.pending-color { color: #f0ad00; }
+    .stat-num.approved-color { color: #4ade80; }
+    .stat-num.rejected-color { color: #f87171; }
+    .stat-label { font-size: 12px; color: var(--text-sub); margin-top: 2px; }
+
+    @media (max-width: 600px) {
+      .order-card { grid-template-columns: 1fr; }
+      .order-side { flex-direction: row; align-items: center; }
+      .screenshot-thumb { width: 64px; height: 64px; }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Admin Gate -->
+  <div class="gate" id="gate">
+    <!-- Login form rendered by admin-auth.js -->
+  </div>
+
+  <!-- Dashboard (hidden until verified) -->
+  <div class="wrap" id="dashboard" style="display:none">
+    <a href="admin-pricing.html" class="btn-back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+      Pricing Admin
+    </a>
+
+    <div class="hero">
+      <p class="eyebrow">Admin Dashboard</p>
+      <h1>Payment Orders</h1>
+      <p class="sub">Review customer payment screenshots and approve or reject orders.</p>
+      <button id="adminLogoutBtn" class="btn-back" style="margin-top:14px;margin-bottom:0;">Logout</button>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats" id="stats"></div>
+
+    <!-- Tabs -->
+    <div class="tabs" id="tabs">
+      <div class="tab active" data-filter="all" onclick="filterOrders('all')">All</div>
+      <div class="tab" data-filter="pending" onclick="filterOrders('pending')">Pending</div>
+      <div class="tab" data-filter="approved" onclick="filterOrders('approved')">Approved</div>
+      <div class="tab" data-filter="rejected" onclick="filterOrders('rejected')">Rejected</div>
+    </div>
+
+    <!-- Orders list -->
+    <div class="orders-list" id="ordersList">
+      <div class="loading"><div class="spinner"></div>Loading orders...</div>
+    </div>
+  </div>
+
+  <!-- Screenshot lightbox -->
+  <div class="modal-overlay" id="lightbox" onclick="closeLightbox()">
+    <button class="modal-close" onclick="closeLightbox()">✕</button>
+    <img class="modal-img" id="lightboxImg" alt="Screenshot" onclick="event.stopPropagation()">
+  </div>
+
+  <!-- Reject modal -->
+  <div class="reject-modal" id="rejectModal">
+    <div class="reject-box" onclick="event.stopPropagation()">
+      <h3>Reject Order</h3>
+      <textarea id="rejectNote" placeholder="Admin note (optional)…"></textarea>
+      <div class="btn-row">
+        <button class="btn btn-reject" style="background:transparent; border:1px solid var(--border); color:var(--text-sub);" onclick="closeRejectModal()">Cancel</button>
+        <button class="btn btn-reject" onclick="confirmReject()">Reject</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script type="module">
+    import { supabase } from './js/supabase.js';
+    import { requireAdminAuth, getAdminSession, clearAdminSession } from './js/admin-auth.js';
+
+    const PLAN_NAMES = { 0:'Free', 1:'Student', 2:'Pro', 3:'Premium', 4:'Ultra' };
+    const PAY_NAMES = { kbzpay:'KBZ Pay', ayapay:'AYA Pay', uabpay:'UAB Pay', wavepay:'Wave Pay' };
+
+    let allOrders = [];
+    let currentFilter = 'all';
+    let rejectOrderId = null;
+    let refreshInterval = null;
+
+    function formatKs(v) { return new Intl.NumberFormat('en-US').format(Number(v || 0)); }
+
+    function formatDate(iso) {
+      return new Date(iso).toLocaleDateString('en-GB', {
+        day: 'numeric', month: 'short', year: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+      });
+    }
+
+    async function startDashboard() {
+      document.getElementById('gate').style.display = 'none';
+      document.getElementById('dashboard').style.display = 'block';
+      
+      const logoutBtn = document.getElementById('adminLogoutBtn');
+      if (logoutBtn) {
+        logoutBtn.onclick = () => { clearAdminSession(); location.reload(); };
+      }
+
+      await loadOrders();
+      refreshInterval = setInterval(loadOrders, 30000);
+    }
+
+    // ── Init ──
+    async function init() {
+      const gateEl = document.getElementById('gate');
+      const dashEl = document.getElementById('dashboard');
+
+      const email = await requireAdminAuth({
+        gateEl,
+        appEl: dashEl,
+        onLogin: async () => {
+          await startDashboard();
+        },
+      });
+
+      if (email) {
+        await startDashboard();
+      }
+    }
+
+    // ── Load orders ──
+    async function loadOrders() {
+      try {
+        const res = await apiFetch('/api/admin/payment-orders');
+        allOrders = res.orders || [];
+        updateStats();
+        renderOrders();
+      } catch (err) {
+        document.getElementById('ordersList').innerHTML =
+          `<div class="empty-state"><div class="icon">⚠️</div><p>${err.message}</p></div>`;
+      }
+    }
+
+    function updateStats() {
+      const pending = allOrders.filter(o => o.status === 'pending').length;
+      const approved = allOrders.filter(o => o.status === 'approved').length;
+      const rejected = allOrders.filter(o => o.status === 'rejected').length;
+
+      document.getElementById('stats').innerHTML = `
+        <div class="stat-card"><div class="stat-num">${allOrders.length}</div><div class="stat-label">Total</div></div>
+        <div class="stat-card"><div class="stat-num pending-color">${pending}</div><div class="stat-label">Pending</div></div>
+        <div class="stat-card"><div class="stat-num approved-color">${approved}</div><div class="stat-label">Approved</div></div>
+        <div class="stat-card"><div class="stat-num rejected-color">${rejected}</div><div class="stat-label">Rejected</div></div>
+      `;
+
+      // Update tab counts
+      document.querySelectorAll('.tab').forEach(tab => {
+        const f = tab.dataset.filter;
+        let count = allOrders.length;
+        if (f !== 'all') count = allOrders.filter(o => o.status === f).length;
+        const existing = tab.querySelector('.count');
+        if (existing) existing.textContent = count;
+        else {
+          const span = document.createElement('span');
+          span.className = 'count';
+          span.textContent = count;
+          tab.appendChild(span);
+        }
+      });
+    }
+
+    function renderOrders() {
+      const filtered = currentFilter === 'all'
+        ? allOrders
+        : allOrders.filter(o => o.status === currentFilter);
+
+      const container = document.getElementById('ordersList');
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="empty-state">
+            <div class="icon">📭</div>
+            <p>No ${currentFilter === 'all' ? '' : currentFilter + ' '}orders found.</p>
+          </div>`;
+        return;
+      }
+
+      container.innerHTML = filtered.map(order => `
+        <div class="order-card">
+          <div class="order-main">
+            <div class="order-top">
+              <span class="badge badge-${order.status}">${order.status}</span>
+              <span class="badge badge-${order.payment_method}">${PAY_NAMES[order.payment_method] || order.payment_method}</span>
+            </div>
+            <div class="order-details">
+              <strong>${PLAN_NAMES[order.plan_level] || 'Plan'}</strong> (Level ${order.plan_level})<br>
+              <span class="order-amount">${formatKs(order.amount_ks)} ks</span>
+            </div>
+            <div class="order-user">User: ${order.user_id}</div>
+            <div class="order-date">${formatDate(order.created_at)}</div>
+            ${order.admin_note ? `<div class="order-note">📝 ${order.admin_note}</div>` : ''}
+            ${order.status === 'pending' ? `
+              <div class="btn-group" style="margin-top:12px;">
+                <button class="btn btn-approve" onclick="approveOrder('${order.id}')">✓ Approve</button>
+                <button class="btn btn-reject" onclick="openRejectModal('${order.id}')">✕ Reject</button>
+              </div>
+            ` : ''}
+          </div>
+          <div class="order-side">
+            ${order.screenshot_url
+              ? `<img class="screenshot-thumb" src="${order.screenshot_url}" alt="Screenshot" onclick="openLightbox('${order.screenshot_url}')">`
+              : '<span style="font-size:12px;color:var(--text-sub);">No screenshot</span>'}
+          </div>
+        </div>
+      `).join('');
+    }
+
+    // ── Actions ──
+    window.filterOrders = function(filter) {
+      currentFilter = filter;
+      document.querySelectorAll('.tab').forEach(t => t.classList.toggle('active', t.dataset.filter === filter));
+      renderOrders();
+    };
+
+    window.approveOrder = async function(orderId) {
+      if (!confirm('Approve this payment and activate subscription?')) return;
+      try {
+        await apiFetch('/api/admin/payment/approve', {
+          method: 'POST',
+          body: JSON.stringify({ order_id: orderId }),
+        });
+        showToast('Payment approved! User upgraded.', 'success');
+        await loadOrders();
+      } catch (err) {
+        showToast(err.message || 'Failed to approve', 'error');
+      }
+    };
+
+    window.openRejectModal = function(orderId) {
+      rejectOrderId = orderId;
+      document.getElementById('rejectNote').value = '';
+      document.getElementById('rejectModal').classList.add('open');
+    };
+
+    window.closeRejectModal = function() {
+      rejectOrderId = null;
+      document.getElementById('rejectModal').classList.remove('open');
+    };
+
+    window.confirmReject = async function() {
+      if (!rejectOrderId) return;
+      try {
+        const note = document.getElementById('rejectNote').value.trim();
+        await apiFetch('/api/admin/payment/reject', {
+          method: 'POST',
+          body: JSON.stringify({ order_id: rejectOrderId, admin_note: note || null }),
+        });
+        closeRejectModal();
+        showToast('Payment rejected.', 'success');
+        await loadOrders();
+      } catch (err) {
+        showToast(err.message || 'Failed to reject', 'error');
+      }
+    };
+
+    window.openLightbox = function(url) {
+      document.getElementById('lightboxImg').src = url;
+      document.getElementById('lightbox').classList.add('open');
+    };
+
+    window.closeLightbox = function() {
+      document.getElementById('lightbox').classList.remove('open');
+    };
+
+    // ── API helper ──
+    async function apiFetch(url, opts = {}) {
+      // Try to get Supabase auth token for API calls
+      let token = '';
+      try {
+        const { data: { session } } = await supabase.auth.getSession();
+        token = session?.access_token || '';
+      } catch (_) {}
+
+      const adminSession = getAdminSession();
+      const res = await fetch(url, {
+        ...opts,
+        headers: {
+          'Content-Type': 'application/json',
+          ...(token ? { 'Authorization': `Bearer ${token}` } : {}),
+          ...(adminSession?.email ? { 'X-Admin-Email': adminSession.email } : {}),
+          ...(opts.headers || {}),
+        },
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Request failed');
+      return data;
+    }
+
+    // ── Toast ──
+    function showToast(msg, type = 'success') {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = `toast ${type} show`;
+      setTimeout(() => t.classList.remove('show'), 3500);
+    }
+
+    // ── Keyboard ──
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') {
+        closeLightbox();
+        closeRejectModal();
+      }
+    });
+
+    init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | ART de ONE</title>
+  <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/dy7vubtji/image/upload/v1774516236/favicon_epuxyi.svg">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Instrument+Serif:ital@0;1&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    :root {
+      --accent: #a7e169;
+      --accent-dark: #8cca50;
+      --accent-soft: rgba(167, 225, 105, .14);
+      --bg: #fefffa;
+      --bg-alt: #f4f5f0;
+      --surface: #ffffff;
+      --border: #e2e3de;
+      --text: #1b1c18;
+      --text-sub: #6b6c68;
+      --text-muted: #9b9c98;
+      --hover: #eaebea;
+      --danger: #f87171;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+      --shadow-sm: 0 1px 4px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+      --shadow-md: 0 4px 18px rgba(0,0,0,.09), 0 1px 4px rgba(0,0,0,.05);
+      --shadow-lg: 0 12px 44px rgba(0,0,0,.13), 0 2px 10px rgba(0,0,0,.07);
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    [data-theme="dark"] {
+      --accent: #daff99;
+      --accent-dark: #b8e673;
+      --accent-soft: rgba(218,255,153,.14);
+      --bg: #052d23;
+      --bg-alt: #04241c;
+      --surface: #073b2e;
+      --border: #0a4a3a;
+      --text: #f4f4f4;
+      --text-sub: #a0b8b0;
+      --text-muted: #608075;
+      --hover: #063428;
+      --shadow-sm: 0 1px 4px rgba(0,0,0,.25), 0 1px 2px rgba(0,0,0,.18);
+      --shadow-md: 0 4px 18px rgba(0,0,0,.35), 0 1px 4px rgba(0,0,0,.22);
+      --shadow-lg: 0 12px 44px rgba(0,0,0,.5), 0 2px 10px rgba(0,0,0,.28);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      transition: background .3s var(--ease-out), color .3s var(--ease-out);
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ── Nav ── */
+    .nav {
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-left { display: flex; align-items: center; gap: 16px; }
+    .nav-logo { height: 28px; }
+    .logo-dark { display: none; }
+    .logo-light { display: block; }
+    [data-theme="dark"] .logo-light { display: none; }
+    [data-theme="dark"] .logo-dark { display: block; }
+    .nav-back {
+      font-size: 13px; font-weight: 500; color: var(--text-sub);
+      display: flex; align-items: center; gap: 6px; transition: color .2s;
+    }
+    .nav-back:hover { color: var(--text); }
+    .theme-btn {
+      width: 32px; height: 32px; border-radius: var(--radius-sm);
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text-sub); cursor: pointer;
+      display: flex; align-items: center; justify-content: center; transition: all .2s;
+    }
+    .theme-btn:hover { border-color: var(--text-sub); color: var(--text); }
+
+    /* ── Container ── */
+    .container { max-width: 720px; margin: 0 auto; padding: 32px 20px 64px; }
+
+    /* ── Steps indicator ── */
+    .steps {
+      display: flex; align-items: center; gap: 0;
+      margin-bottom: 56px; justify-content: center;
+    }
+    .step-dot {
+      width: 32px; height: 32px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 13px; font-weight: 600;
+      background: var(--bg-alt); color: var(--text-muted);
+      border: 2px solid var(--border); transition: all .3s var(--ease-out);
+    }
+    .step-dot.active { background: var(--accent); color: #1b1c18; border-color: var(--accent); }
+    .step-dot.done { background: var(--accent-dark); color: #1b1c18; border-color: var(--accent-dark); }
+    .step-line {
+      width: 48px; height: 2px; background: var(--border); transition: background .3s;
+    }
+    .step-line.done { background: var(--accent-dark); }
+
+    /* ── Section title ── */
+    .section-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: clamp(28px, 5vw, 38px);
+      font-weight: 400; line-height: 1.5; margin-bottom: 16px;
+    }
+    .section-sub { color: var(--text-sub); font-size: 15px; margin-bottom: 48px; line-height: 1.7; }
+
+    /* ── Plan cards ── */
+    .plan-grid {
+      display: grid; gap: 14px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    .plan-card {
+      background: var(--surface); border: 2px solid var(--border);
+      border-radius: var(--radius-lg); padding: 22px;
+      cursor: pointer; transition: all .25s var(--ease-out); position: relative;
+    }
+    .plan-card:hover { border-color: var(--accent); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .plan-card.selected { border-color: var(--accent); background: var(--accent-soft); }
+    .plan-card.current-plan { opacity: .5; pointer-events: none; }
+    .plan-card .plan-name { font-size: 18px; font-weight: 600; margin-bottom: 4px; }
+    .plan-card .plan-price { font-size: 26px; font-weight: 700; color: var(--accent-dark); }
+    .plan-card .plan-price span { font-size: 13px; font-weight: 400; color: var(--text-sub); }
+    .plan-card .plan-info { font-size: 13px; color: var(--text-sub); margin-top: 10px; line-height: 1.7; }
+    .plan-badge {
+      position: absolute; top: 12px; right: 12px;
+      font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: .08em;
+      padding: 3px 10px; border-radius: var(--radius-full);
+      background: var(--accent-soft); color: var(--accent-dark);
+    }
+
+    /* ── Payment methods ── */
+    .pay-grid { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+    @media (max-width: 480px) { .pay-grid { grid-template-columns: 1fr; } }
+    .pay-card {
+      border: 2px solid var(--border); border-radius: var(--radius-md);
+      padding: 18px; cursor: pointer; transition: all .25s var(--ease-out);
+      text-align: center; background: var(--surface);
+    }
+    .pay-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+    .pay-card.selected { border-color: var(--pay-color, var(--accent)); }
+    .pay-card .pay-name { font-size: 16px; font-weight: 600; margin-bottom: 4px; }
+    .pay-card .pay-account { font-size: 12px; color: var(--text-sub); }
+    .pay-card .pay-icon {
+      width: 48px; height: 48px; border-radius: 12px; margin: 0 auto 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px; font-weight: 800; color: #fff;
+    }
+    .pay-card .pay-icon-img {
+      height: 48px; width: auto; max-width: 100%; border-radius: 12px;
+      margin: 0 auto 10px; display: block; object-fit: contain;
+    }
+
+    /* ── Summary box ── */
+    .summary-box {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 20px; margin-bottom: 20px;
+    }
+    .summary-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 8px 0; font-size: 14px;
+    }
+    .summary-row + .summary-row { border-top: 1px solid var(--border); }
+    .summary-label { color: var(--text-sub); }
+    .summary-value { font-weight: 600; }
+    .summary-total { font-size: 20px; color: var(--accent-dark); }
+
+    /* ── Upload area ── */
+    .upload-area {
+      border: 2px dashed var(--border); border-radius: var(--radius-lg);
+      padding: 32px; text-align: center; cursor: pointer;
+      transition: all .25s var(--ease-out); position: relative; overflow: hidden;
+    }
+    .upload-area:hover { border-color: var(--accent); background: var(--accent-soft); }
+    .upload-area.has-file { border-style: solid; border-color: var(--accent); }
+    .upload-area input { display: none; }
+    .upload-icon { font-size: 36px; margin-bottom: 8px; }
+    .upload-text { font-size: 14px; color: var(--text-sub); }
+    .upload-text strong { color: var(--accent-dark); }
+    .upload-preview {
+      max-width: 100%; max-height: 300px; border-radius: var(--radius-md);
+      margin-top: 12px; display: none;
+    }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 12px 28px; border-radius: var(--radius-full);
+      font-family: inherit; font-size: 14px; font-weight: 600;
+      cursor: pointer; border: none; transition: all .25s var(--ease-out);
+    }
+    .btn-primary { background: var(--accent); color: #1b1c18; }
+    .btn-primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn-primary:disabled { opacity: .4; pointer-events: none; }
+    .btn-secondary {
+      background: transparent; color: var(--text-sub);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--text-sub); color: var(--text); }
+    .btn-row { display: flex; gap: 12px; margin-top: 24px; }
+
+    /* ── Order history ── */
+    .order-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: var(--radius-md); padding: 16px; margin-bottom: 10px;
+    }
+    .order-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+    .order-plan { font-weight: 600; }
+    .order-status {
+      font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
+      padding: 3px 10px; border-radius: var(--radius-full);
+    }
+    .order-status.pending { background: rgba(240,173,0,.15); color: #f0ad00; }
+    .order-status.approved { background: rgba(74,222,128,.12); color: #4ade80; }
+    .order-status.rejected { background: rgba(248,113,113,.12); color: #f87171; }
+    .order-meta { font-size: 13px; color: var(--text-sub); }
+
+    /* ── Toast ── */
+    .toast {
+      position: fixed; top: 20px; right: 20px; z-index: 1000;
+      padding: 14px 22px; border-radius: var(--radius-md);
+      font-size: 14px; font-weight: 500; color: #fff;
+      transform: translateX(120%); transition: transform .3s var(--ease-out);
+      box-shadow: var(--shadow-lg);
+    }
+    .toast.show { transform: translateX(0); }
+    .toast.success { background: #16a34a; }
+    .toast.error { background: #dc2626; }
+
+    /* ── Loading ── */
+    .loading { text-align: center; padding: 48px; color: var(--text-sub); }
+    .spinner {
+      width: 32px; height: 32px; border: 3px solid var(--border);
+      border-top-color: var(--accent); border-radius: 50%;
+      animation: spin .7s linear infinite; margin: 0 auto 12px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── Step panels ── */
+    .step-panel { display: none; }
+    .step-panel.active { display: block; animation: fadeIn .3s var(--ease-out); }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ── Hidden ── */
+    .hidden { display: none !important; }
+  </style>
+</head>
+
+<body>
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-left">
+      <a href="index.html">
+        <img class="nav-logo logo-light" src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774451883/ADO_AI-02_lnmqny.png" alt="ART de ONE">
+        <img class="nav-logo logo-dark" src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774451883/ADO_AI-01_or74hj.png" alt="ART de ONE">
+      </a>
+      <a href="index.html" class="nav-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+        Plans
+      </a>
+    </div>
+    <button class="theme-btn" onclick="toggleTheme()" title="Toggle theme">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+    </button>
+  </nav>
+
+  <div class="container">
+    <!-- Steps indicator -->
+    <div class="steps">
+      <div class="step-dot active" id="dot1">1</div>
+      <div class="step-line" id="line1"></div>
+      <div class="step-dot" id="dot2">2</div>
+      <div class="step-line" id="line2"></div>
+      <div class="step-dot" id="dot3">3</div>
+      <div class="step-line" id="line3"></div>
+      <div class="step-dot" id="dot4">4</div>
+    </div>
+
+    <!-- Step 1: Choose Plan -->
+    <div class="step-panel active" id="step1">
+      <h1 class="section-title">Plan ရွေးပါ</h1>
+      <p class="section-sub">သင့်အတွက် အသင့်တော်ဆုံး Plan ကိုရွေးပါ</p>
+      <div class="plan-grid" id="planGrid">
+        <div class="loading"><div class="spinner"></div>Plans loading...</div>
+      </div>
+    </div>
+
+    <!-- Step 2: Choose Payment Method -->
+    <div class="step-panel" id="step2">
+      <h1 class="section-title">ငွေပေးချေမှုနည်းလမ်း</h1>
+      <p class="section-sub" id="step2Sub">Plan ရွေးပြီးပါပြီ။ ငွေလွှဲမည့်နည်းလမ်းကိုရွေးပါ</p>
+
+      <div class="summary-box" id="planSummary" style="margin-bottom:24px;">
+        <div class="summary-row">
+          <span class="summary-label">Plan</span>
+          <span class="summary-value" id="sumPlan">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">ကျသင့်ငွေ</span>
+          <span class="summary-value summary-total" id="sumPrice">—</span>
+        </div>
+      </div>
+
+      <div class="pay-grid">
+        <div class="pay-card" data-method="kbzpay" style="--pay-color:#0066cc" onclick="selectPayment('kbzpay')">
+          <img class="pay-icon-img" src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1774671780/kbz_zbwulf.png" alt="KBZ Pay">
+          <div class="pay-name">KBZ Pay</div>
+          <div class="pay-account">09953681497 · Phyo Min Zaw</div>
+        </div>
+        <div class="pay-card" data-method="ayapay" style="--pay-color:#cc0000" onclick="selectPayment('ayapay')">
+          <img class="pay-icon-img" src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1774671780/aya_nhoooc.png" alt="AYA Pay">
+          <div class="pay-name">AYA Pay</div>
+          <div class="pay-account">09953681497 · Phyo Min Zaw</div>
+        </div>
+        <div class="pay-card" data-method="uabpay" style="--pay-color:#006633" onclick="selectPayment('uabpay')">
+          <img class="pay-icon-img" src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1774671780/uab_ubezuv.png" alt="uab Pay">
+          <div class="pay-name">UAB Pay</div>
+          <div class="pay-account">09953681497 · Phyo Min Zaw</div>
+        </div>
+        <div class="pay-card" data-method="wavepay" style="--pay-color:#f0ad00" onclick="selectPayment('wavepay')">
+          <img class="pay-icon-img" src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1774671780/wave_ailmer.png" alt="Wave Pay">
+          <div class="pay-name">Wave Pay</div>
+          <div class="pay-account">09953681497 · Phyo Min Zaw</div>
+        </div>
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-secondary" onclick="goStep(1)">← Back</button>
+      </div>
+    </div>
+
+    <!-- Step 3: Upload Screenshot -->
+    <div class="step-panel" id="step3">
+      <h1 class="section-title">Screenshot တင်ပါ</h1>
+      <p class="section-sub">ငွေလွှဲပြီး Screenshot ရိုက်ပြီး တင်ပါ</p>
+
+      <div class="summary-box" id="step3Summary">
+        <div class="summary-row">
+          <span class="summary-label">Plan</span>
+          <span class="summary-value" id="sum3Plan">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">ငွေပေးချေမှု</span>
+          <span class="summary-value" id="sum3Method">—</span>
+        </div>
+        <div class="summary-row">
+          <span class="summary-label">ကျသင့်ငွေ</span>
+          <span class="summary-value summary-total" id="sum3Price">—</span>
+        </div>
+      </div>
+
+      <div class="upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
+        <input type="file" id="fileInput" accept="image/*" onchange="handleFileSelect(event)">
+        <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-bottom:8px; color:var(--text-sub);"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
+        <div class="upload-text">
+          <strong>Click to upload</strong> or drag & drop<br>
+          PNG, JPG — max 5MB
+        </div>
+        <img class="upload-preview" id="uploadPreview" alt="Preview">
+      </div>
+
+      <div class="btn-row">
+        <button class="btn btn-secondary" onclick="goStep(2)">← Back</button>
+        <button class="btn btn-primary" id="btnSubmit" disabled onclick="submitPayment()">
+          Submit Payment
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 4: Success -->
+    <div class="step-panel" id="step4">
+      <div style="text-align:center; padding:24px 0;">
+        <div style="width:64px; height:64px; border-radius:50%; background:var(--accent-soft); color:var(--accent-dark); display:flex; align-items:center; justify-content:center; margin:0 auto 16px;">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+        </div>
+        <h1 class="section-title">Order Submitted!</h1>
+        <p class="section-sub" style="max-width:400px; margin:8px auto 0;">
+          သင့် Payment Order ကို Admin စစ်ဆေးပြီး ၂၄ နာရီအတွင်း Approve လုပ်ပေးပါမည်။
+        </p>
+      </div>
+
+      <h3 style="font-size:16px; margin:32px 0 12px;">Order History</h3>
+      <div id="orderHistory">
+        <div class="loading"><div class="spinner"></div>Loading...</div>
+      </div>
+
+      <div class="btn-row" style="justify-content:center; margin-top:32px;">
+        <a href="ado-ai.html" class="btn btn-primary">Start Chatting →</a>
+        <button class="btn btn-secondary" onclick="goStep(1); resetForm();">Buy Another Plan</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"></div>
+
+  <script type="module">
+    import { supabase } from './js/supabase.js';
+    import { loadPricingConfig, formatKs } from './js/plan-config.js';
+
+    const MODEL_INFO = {
+      free: 'Llama 3.3 70B · Qwen 32B · Scout 17B',
+      student: 'GPT-5.4-nano · GPT-5-nano · Llama 3.3 70B',
+      pro: 'GPT-4.1-nano · GPT-4o · Claude Haiku 4.5',
+      premium: 'GPT-5.4 · GPT-5.4-mini · Claude Sonnet 4.6',
+      ultra: 'Claude Opus 4.6 (Most powerful)',
+    };
+
+    const PAY_NAMES = { kbzpay: 'KBZ Pay', ayapay: 'AYA Pay', uabpay: 'UAB Pay', wavepay: 'Wave Pay' };
+
+    let plans = [];
+    let session = null;
+    let selectedPlan = null;
+    let selectedMethod = null;
+    let fileBase64 = null;
+    let fileName = null;
+
+    // ── Init ──
+    async function init() {
+      const { data: { session: s } } = await supabase.auth.getSession();
+      session = s;
+      if (!session) {
+        window.location.href = 'login.html';
+        return;
+      }
+
+      // Check subscription expiry
+      try {
+        await apiFetch('/api/subscription/check');
+      } catch (_) {}
+
+      // Load plans
+      const config = await loadPricingConfig(supabase);
+      plans = config.plans.filter(p => p.plan_level > 0 && p.is_active);
+
+      const userPlanLevel = parseInt(session.user.user_metadata?.plan_level || '0', 10);
+      const preselect = new URLSearchParams(window.location.search).get('plan');
+
+      const grid = document.getElementById('planGrid');
+      grid.innerHTML = '';
+
+      plans.forEach(plan => {
+        const isCurrent = plan.plan_level <= userPlanLevel && plan.plan_level > 0;
+        const card = document.createElement('div');
+        card.className = 'plan-card' + (isCurrent ? ' current-plan' : '');
+        card.dataset.planId = plan.id;
+        card.innerHTML = `
+          ${isCurrent ? '<span class="plan-badge">Current Plan</span>' : ''}
+          <div class="plan-name">${plan.name}</div>
+          <div class="plan-price">${formatKs(plan.price_ks)} <span>ks / month</span></div>
+          <div class="plan-info">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-1.5px; margin-right:4px;"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg> ${plan.daily_messages} messages / day<br>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-1.5px; margin-right:4px;"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg> ${MODEL_INFO[plan.id] || ''}
+            ${plan.max_upload_files ? '<br><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-1.5px; margin-right:4px;"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg> ' + plan.max_upload_files + ' files / chat' : '<br><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:inline-block; vertical-align:-1.5px; margin-right:4px;"><path d="m21.44 11.05-9.19 9.19a6 6 0 0 1-8.49-8.49l8.57-8.57A4 4 0 1 1 18 8.84l-8.59 8.57a2 2 0 0 1-2.83-2.83l8.49-8.48"/></svg> Unlimited files'}
+          </div>
+        `;
+        if (!isCurrent) {
+          card.addEventListener('click', () => choosePlan(plan));
+        }
+        grid.appendChild(card);
+
+        if (preselect === plan.id && !isCurrent) {
+          setTimeout(() => choosePlan(plan), 100);
+        }
+      });
+    }
+
+    function choosePlan(plan) {
+      selectedPlan = plan;
+      document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('selected'));
+      const card = document.querySelector(`[data-plan-id="${plan.id}"]`);
+      if (card) card.classList.add('selected');
+
+      document.getElementById('sumPlan').textContent = plan.name;
+      document.getElementById('sumPrice').textContent = formatKs(plan.price_ks) + ' ks';
+      document.getElementById('sum3Plan').textContent = plan.name;
+      document.getElementById('sum3Price').textContent = formatKs(plan.price_ks) + ' ks';
+
+      goStep(2);
+    }
+
+    window.selectPayment = function(method) {
+      selectedMethod = method;
+      document.querySelectorAll('.pay-card').forEach(c => c.classList.remove('selected'));
+      document.querySelector(`[data-method="${method}"]`)?.classList.add('selected');
+      document.getElementById('sum3Method').textContent = PAY_NAMES[method] || method;
+      goStep(3);
+    };
+
+    window.handleFileSelect = function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      if (file.size > 5 * 1024 * 1024) {
+        showToast('File is too large. Max 5MB.', 'error');
+        return;
+      }
+      fileName = file.name;
+      const reader = new FileReader();
+      reader.onload = (ev) => {
+        const base64 = ev.target.result.split(',')[1];
+        fileBase64 = base64;
+        const preview = document.getElementById('uploadPreview');
+        preview.src = ev.target.result;
+        preview.style.display = 'block';
+        document.getElementById('uploadArea').classList.add('has-file');
+        document.getElementById('btnSubmit').disabled = false;
+      };
+      reader.readAsDataURL(file);
+    };
+
+    window.submitPayment = async function() {
+      if (!selectedPlan || !selectedMethod || !fileBase64) return;
+
+      const btn = document.getElementById('btnSubmit');
+      btn.disabled = true;
+      btn.textContent = 'Uploading...';
+
+      try {
+        // 1. Upload screenshot
+        const uploadRes = await apiFetch('/api/payment/upload-screenshot', {
+          method: 'POST',
+          body: JSON.stringify({ image_base64: fileBase64, file_name: fileName }),
+        });
+
+        // 2. Submit payment order
+        await apiFetch('/api/payment/submit', {
+          method: 'POST',
+          body: JSON.stringify({
+            plan_id: selectedPlan.id,
+            payment_method: selectedMethod,
+            screenshot_url: uploadRes.url,
+          }),
+        });
+
+        showToast('Payment submitted successfully!', 'success');
+        goStep(4);
+        loadOrderHistory();
+      } catch (err) {
+        showToast(err.message || 'Failed to submit', 'error');
+        btn.disabled = false;
+        btn.textContent = 'Submit Payment';
+      }
+    };
+
+    async function loadOrderHistory() {
+      const container = document.getElementById('orderHistory');
+      try {
+        const res = await apiFetch('/api/payment/my-orders');
+        const orders = res.orders || [];
+        if (orders.length === 0) {
+          container.innerHTML = '<p style="color:var(--text-sub); font-size:14px;">No orders yet.</p>';
+          return;
+        }
+        container.innerHTML = orders.map(o => `
+          <div class="order-card">
+            <div class="order-header">
+              <span class="order-plan">${['Free','Student','Pro','Premium','Ultra'][o.plan_level] || 'Plan'} — ${formatKs(o.amount_ks)} ks</span>
+              <span class="order-status ${o.status}">${o.status}</span>
+            </div>
+            <div class="order-meta">
+              ${PAY_NAMES[o.payment_method] || o.payment_method} · ${new Date(o.created_at).toLocaleDateString('en-GB', { day:'numeric', month:'short', year:'numeric', hour:'2-digit', minute:'2-digit' })}
+              ${o.admin_note ? '<br>Admin: ' + o.admin_note : ''}
+            </div>
+          </div>
+        `).join('');
+      } catch (err) {
+        container.innerHTML = '<p style="color:var(--danger);">Failed to load orders.</p>';
+      }
+    }
+
+    window.resetForm = function() {
+      selectedPlan = null;
+      selectedMethod = null;
+      fileBase64 = null;
+      fileName = null;
+      document.querySelectorAll('.plan-card').forEach(c => c.classList.remove('selected'));
+      document.querySelectorAll('.pay-card').forEach(c => c.classList.remove('selected'));
+      document.getElementById('uploadPreview').style.display = 'none';
+      document.getElementById('uploadArea').classList.remove('has-file');
+      document.getElementById('btnSubmit').disabled = true;
+      document.getElementById('btnSubmit').textContent = 'Submit Payment';
+      document.getElementById('fileInput').value = '';
+    };
+
+    // ── Step navigation ──
+    window.goStep = function(n) {
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById(`step${i}`).classList.toggle('active', i === n);
+        const dot = document.getElementById(`dot${i}`);
+        dot.classList.toggle('active', i === n);
+        dot.classList.toggle('done', i < n);
+      }
+      for (let i = 1; i <= 3; i++) {
+        document.getElementById(`line${i}`).classList.toggle('done', i < n);
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
+    // ── API helper ──
+    async function apiFetch(url, opts = {}) {
+      const token = session?.access_token;
+      const res = await fetch(url, {
+        ...opts,
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`,
+          ...(opts.headers || {}),
+        },
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.error || 'Request failed');
+      return data;
+    }
+
+    // ── Toast ──
+    function showToast(msg, type = 'success') {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.className = `toast ${type} show`;
+      setTimeout(() => t.classList.remove('show'), 3500);
+    }
+    window.showToast = showToast;
+
+    init();
+  </script>
+
+  <script>
+    function toggleTheme() {
+      const html = document.documentElement;
+      html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('theme', html.dataset.theme);
+    }
+    const saved = localStorage.getItem('theme');
+    if (saved) document.documentElement.dataset.theme = saved;
+  </script>
+</body>
+</html>

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="my" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grok 3: The Uncensored AI Revolution | ART de ONE Blog</title>
+    <meta name="description"
+        content="xAI's Grok 3 brings real-time knowledge and unfiltered responses to the forefront of AI.">
+    <link rel="icon" type="image/svg+xml" href="https://res.cloudinary.com/dy7vubtji/image/upload/v1774516236/favicon_epuxyi.svg">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,700&family=Space+Grotesk:wght@700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet" />
+
+    <style>
+        /* ══ DESIGN TOKENS ═══════════════════════════════════════════════ */
+        :root {
+            --accent: #a7e169;
+            --accent-dark: #8cca50;
+            --bg: #fefffa;
+            --bg-alt: #f4f5f0;
+            --surface: #ffffff;
+            --border: #e2e3de;
+            --text: #1b1c18;
+            --text-sub: #6b6c68;
+            --text-muted: #9b9c98;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        [data-theme="dark"] {
+            --accent: #daff99;
+            --accent-dark: #b8e673;
+            --bg: #052d23;
+            --bg-alt: #04241c;
+            --surface: #073b2e;
+            --border: #0a4a3a;
+            --text: #f4f4f4;
+            --text-sub: #a0b8b0;
+            --text-muted: #608075;
+        }
+
+        /* Light mode nav contrast */
+        [data-theme="light"] .nav {
+            background: rgba(244, 245, 240, 0.92);
+            border-bottom-color: #d0d2ca;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.8;
+            transition: background .3s, color .3s;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            border-radius: var(--radius-md);
+        }
+
+        /* ══ NAV — iOS 26 Glass Pill ════════════════════════════════ */
+        .nav {
+            position: fixed;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 100;
+            width: calc(100% - 32px);
+            max-width: 900px;
+            background: rgba(234, 236, 228, .82);
+            border: 1px solid rgba(208, 210, 202, .7);
+            border-radius: 9999px;
+            backdrop-filter: blur(24px) saturate(1.8);
+            -webkit-backdrop-filter: blur(24px) saturate(1.8);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .08), 0 1px 3px rgba(0, 0, 0, .05), inset 0 1px 0 rgba(255, 255, 255, .5);
+            transition: background .3s, border-color .3s, box-shadow .3s;
+            right: auto;
+        }
+
+        [data-theme="dark"] .nav {
+            background: rgba(5, 45, 35, .5);
+            border-color: rgba(255, 255, 255, .08);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, .25), 0 1px 3px rgba(0, 0, 0, .18), inset 0 1px 0 rgba(255, 255, 255, .04);
+        }
+
+        .nav-inner {
+            max-width: 100%;
+            margin: 0 auto;
+            padding: 0 8px 0 18px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            height: 28px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--text-sub);
+            transition: color .2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--text);
+        }
+
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-btn {
+            width: 32px;
+            height: 32px;
+            border-radius: 9999px;
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text-sub);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: border-color .2s, color .2s, background .2s;
+        }
+
+        .theme-btn:hover {
+            border-color: var(--text-sub);
+            color: var(--text);
+        }
+
+        .nav-signin {
+            font-size: 12.5px;
+            font-weight: 600;
+            padding: 7px 16px;
+            background: var(--accent);
+            color: #0d1a00;
+            border-radius: 9999px;
+            transition: background .2s, transform .12s;
+        }
+
+        .nav-signin:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        /* ══ ANIMATIONS ════════════════════════════════════════════════ */
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+        }
+
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 100ms;
+        }
+
+        .delay-200 {
+            transition-delay: 200ms;
+        }
+
+        .delay-300 {
+            transition-delay: 300ms;
+        }
+
+        /* ══ BLOG POST ══════════════════════════════════════════════════ */
+        .post-header {
+            padding: 120px 24px 40px;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 20px;
+        }
+
+        .post-category {
+            color: var(--accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+        }
+
+        .post-title {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 24px;
+        }
+
+        .post-hero-img {
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto 60px;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+        }
+
+        .post-content {
+            max-width: 720px;
+            margin: 0 auto 100px;
+            padding: 0 24px;
+            font-size: 17px;
+            color: var(--text-sub);
+        }
+
+        .post-content h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 28px;
+            color: var(--text);
+            margin: 48px 0 20px;
+        }
+
+        .post-content p {
+            margin-bottom: 24px;
+        }
+
+        .post-content ul {
+            margin-bottom: 24px;
+            padding-left: 24px;
+        }
+
+        .post-content li {
+            margin-bottom: 12px;
+        }
+
+        .post-content strong {
+            color: var(--text);
+        }
+
+        /* ══ FOOTER ═════════════════════════���════════════════════════════ */
+        .footer {
+            padding: 64px 24px 32px;
+            border-top: 1px solid var(--border);
+            background: var(--bg-alt);
+        }
+
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .footer-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 48px;
+            margin-bottom: 48px;
+            flex-wrap: wrap;
+        }
+
+        .footer-brand {
+            max-width: 320px;
+        }
+
+        .footer-brand img {
+            height: 24px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand p {
+            font-size: 13.5px;
+            color: var(--text-sub);
+            line-height: 1.6;
+        }
+
+        .footer-contact-info {
+            margin-top: 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13.5px;
+            color: var(--text-sub);
+        }
+
+        .contact-item svg {
+            width: 16px;
+            height: 16px;
+            color: var(--accent);
+        }
+
+        .footer-grid {
+            display: flex;
+            gap: 64px;
+            flex-wrap: wrap;
+            flex: 1;
+            justify-content: flex-end;
+        }
+
+        .footer-col {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-col h4 {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 8px;
+        }
+
+        .footer-col a {
+            font-size: 13.5px;
+            color: var(--text-sub);
+            transition: color .2s;
+        }
+
+        .footer-col a:hover {
+            color: var(--accent);
+        }
+
+        .footer-col.footer-newsletter {
+            max-width: 280px;
+        }
+
+        .footer-newsletter p {
+            font-size: 13px;
+            color: var(--text-sub);
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 8px;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 10px 14px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: var(--surface);
+            color: var(--text);
+            font-size: 13px;
+            font-family: inherit;
+            outline: none;
+            transition: border-color .2s;
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--accent);
+        }
+
+        .newsletter-form button {
+            padding: 10px 16px;
+            border-radius: var(--radius-sm);
+            border: none;
+            background: var(--accent);
+            color: #0d1a00;
+            font-size: 13px;
+            font-weight: 600;
+            font-family: inherit;
+            cursor: pointer;
+            transition: background .2s, transform .1s;
+        }
+
+        .newsletter-form button:hover {
+            background: var(--accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .footer-bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .footer-left span {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 16px;
+        }
+
+        .footer-social a {
+            color: var(--text-muted);
+            transition: color .2s, transform .2s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .footer-social a:hover {
+            color: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .footer-social svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        @media (max-width: 768px) {
+            .footer-top {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .footer-grid {
+                gap: 40px;
+                justify-content: space-between;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-links,
+            .nav-right .nav-signin,
+            #desktopAuth {
+                display: none !important;
+            }
+
+            .nav-mobile-btn {
+                display: flex;
+            }
+
+            .nav-right {
+                gap: 8px;
+            }
+
+            /* Show theme btn in mobile too */
+            .nav-right .theme-btn {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav-inner">
+            <a href="../index.html"><img
+                    src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774331383/ADOAI_ic7bau.png"
+                    alt="ART de ONE" class="nav-logo"></a>
+            <ul class="nav-links">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../ado-ai.html">Chat</a></li>
+                <li><a href="../blog.html" class="active">Blog</a></li>
+            </ul>
+            <div class="nav-right">
+                <button class="theme-btn" id="themeBtn">
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round">
+                        <circle cx="12" cy="12" r="5" />
+                        <line x1="12" y1="1" x2="12" y2="3" />
+                        <line x1="12" y1="21" x2="12" y2="23" />
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+                        <line x1="1" y1="12" x2="3" y2="12" />
+                        <line x1="21" y1="12" x2="23" y2="12" />
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+                    </svg>
+                </button>
+                <a href="../login.html" class="nav-signin">Sign in</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="post-header">
+        <div class="post-meta fade-up">
+            <span class="post-category">News</span>
+            <span>•</span>
+            <span>March 2026</span>
+        </div>
+        <h1 class="post-title fade-up delay-100">Grok 3: The Uncensored AI Revolution</h1>
+    </header>
+
+    <img src="https://images.pexels.com/photos/2599244/pexels-photo-2599244.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+        alt="Grok 3" class="post-hero-img fade-up delay-200">
+
+    <main class="post-content">
+        <p class="fade-up">Elon Musk ရဲ့ xAI ကနေ မကြာသေးမီကပဲ <strong>Grok 3</strong> ကို တရားဝင် မိတ်ဆက်လိုက်ပါတယ်။
+            အခြားသော AI model
+            တွေနဲ့ မတူဘဲ Grok 3 ဟာ လွတ်လပ်စွာ ပြောဆိုခွင့် (Free Speech) ကို အခြေခံထားပြီး၊ X (ယခင် Twitter) platform
+            ကနေ real-time data တွေကို တိုက်ရိုက်ရယူနိုင်တဲ့ အားသာချက် ရှိါတယ်။</p>
+
+        <h2 class="fade-up">Grok 3 ရဲ့ ထူးခြားချက်များ</h2>
+        <p class="fade-up">Grok 3 ဟာ ယခင် version တွေထက် အများကြီး ပိုမိုထက်မြက်လာပြီး အောက်ပါ အချက်တွေကြောင့်
+            လူကြိုက်များနေပါတယ်-</p>
+        <ul class="fade-up">
+            <li><strong>Real-time Knowledge:</strong> X platform နဲ့ တိုက်ရိုက်ချိတ်ဆက်ထားတဲ့အတွက် က္ဘာပေါ်မှာ
+                အခုလောလောဆယ် ဖြစ်ပျက်နေတဲ့ သတင်းတွေ၊ trend တွေကို အချိန်နဲ့တစ်ပြေးညီ သိရှိတုံ့ပြန်နိုင်ပါတယ်။</li>
+            <li><strong>Unfiltered Responses:</strong> အခြား AI တွေလို တင်းကျပ်တဲ့ စည်းမျဉ်းတွေ မရှိဘဲ၊ မေးခွန်းတွေကို
+                ပွင့်ပွင့်လင်းလင်းနဲ့ ဟာသနှောပြီး ဖြေကြားပေးနိုင်ပါတယ်။</li>
+            <li><strong>Enhanced Coding & Math:</strong> Grok 3 ဟာ coding နဲ့ သင်္ချာပိုင်းမှာလည်း သိသိသာသာ
+                တိုးတက်လာပြီး၊ ရှုပ်ထွေးတဲ့ ပြဿနာတွေကို ဖြေရှင်းရာမှာ အခြား ထိပ်တန်း AI တွေနဲ့ ယှဉ်ပြိုင်နိုင်စွမ်း
+                ရှိလာပါတယ်။</li>
+            <li><strong>Vision Capabilities:</strong> ပုံရိပတွေကို နားလည်ခွဲခြမ်းစိတ်ဖြာနိုင်စွမ်း
+                ပိုမိုကောင်းမွန်လာပါတယ်။</li>
+        </ul>
+
+        <h2 class="fade-up">ဘယ်သူတွေအတွက် အသင့်တော်ဆုံးလဲ?</h2>
+        <p class="fade-up">Grok 3 ဟာ နောက်ဆုံးရ သတင်းအချက်အလက်တွေကို အမြဲမပြတ် သိရှိချင်သူတေ၊ trend တွေကို လေ့လာနေတဲ့
+            marketer တွေနဲ့၊
+            ပုံသေကားကျ မဟုတ်ဘဲ ပွင့်လင်းမြင်သာတဲ့ အဖြေတွေကို လိုချင်သူတွေအတွက် အထူးသင့်တော်ပါတယ်။</p>
+
+        <h2 class="fade-up">နဂုံး</h2>
+        <p class="fade-up">Grok 3 ဟာ AI လောကမှာ ကွဲပြားခြားနားတဲ့ လမ်းကြောင်းတစ်ခုကို ဖောက်လုပ်နေပါတယ်။ သူ့ရဲ့ real-time
+            data
+            ရယူနိုင်စွမ်းနဲ့ ပွင့်လင်းတဲ့ တုံ့ပြန်မှုတွေက သုံးစွဲသတွေအတွက် အတွေ့အကြုံသစ်တစ်ခုကို ပေးစွမ်းနိုင်မှာပါ။</p>
+
+        <div class="fade-up" style="margin-top: 40px; text-align: center;">
+            <a href="../blog.html"
+                style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm); color: var(--text); font-weight: 600; transition: all 0.2s;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="19" y1="12" x2="5" y2="12"></line>
+                    <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                Back to Blog
+            </a>
+        </div>
+    </main>
+
+    <div id="footer-placeholder"></div>
+
+    <script>
+        const moonSvg = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+        const sunSvg = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
+        function isDark() { return document.documentElement.dataset.theme === 'dark'; }
+        function setTheme(dark) {
+            document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+            localStorage.setItem('ado_theme', dark ? 'dark' : 'light');
+            document.getElementById('themeBtn').innerHTML = dark ? sunSvg : moonSvg;
+        }
+        const savedTheme = localStorage.getItem('ado_theme');
+        if (savedTheme) setTheme(savedTheme === 'dark'); else setTheme(true);
+        document.getElementById('themeBtn').innerHTML = isDark() ? sunSvg : moonSvg;
+        document.getElementById('themeBtn').addEventListener('click', () => setTheme(!isDark()));
+
+        // Scroll Animation
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.15
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-up').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+    <script>
+        fetch('../footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    </script>
+</body>
+
+</html>

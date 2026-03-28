@@ -1,0 +1,5098 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Primary SEO ── -->
+  <title>AI Chat Plans | ART de ONE | Intelligent AI Assistant</title>
+  <meta name="description"
+    content="ART de ONE AI Chat — GPT-5.4, Claude Sonnet, Llama အစရှိသော AI Models များဖြင့် စကားပြောနိုင်ပါသည်။ Free မှ Ultra Plan အထိ ရွေးချယ်နိုင်ပါသည်။">
+  <meta name="keywords" content="AI chat myanmar, GPT-5.4 myanmar, Claude AI, AI assistant, ART de ONE AI, AI စကားပြော">
+  <meta name="author" content="ART de ONE">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://www.artdeone.com/index.html">
+  <link rel="icon" type="image/svg+xml"
+    href="https://res.cloudinary.com/dy7vubtji/image/upload/v1774516236/favicon_epuxyi.svg">
+
+  <!-- ── Open Graph ── -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.artdeone.com/index.html">
+  <meta property="og:title" content="AI Chat Plans | ART de ONE">
+  <meta property="og:description" content="AI Chat Plans — Free မှ Ultra Plan အထိ။ GPT-5.4, Claude, Llama Models များ။">
+  <meta property="og:image" content="https://res.cloudinary.com/dy7vubtji/image/upload/v1774331383/ADOAI_ic7bau.png">
+  <meta property="og:locale" content="my_MM">
+  <meta property="og:site_name" content="ART de ONE">
+
+  <!-- ── Twitter ── -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="AI Chat Plans | ART de ONE">
+  <meta name="twitter:description" content="AI Chat Plans — Free မှ Ultra Plan အထိ။">
+  <meta name="twitter:image" content="https://res.cloudinary.com/dy7vubtji/image/upload/v1774331383/ADOAI_ic7bau.png">
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,700&family=Space+Grotesk:wght@700;800&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet" />
+
+  <style>
+    /* ══ DESIGN TOKENS — matching ado-ai.html ═══════════════════════ */
+    :root {
+      --accent: #a7e169;
+      --accent-dark: #8cca50;
+      --accent-soft: rgba(167, 225, 105, .14);
+      --accent-glow: rgba(167, 225, 105, .22);
+
+      /* Light */
+      --bg: #fefffa;
+      --bg-alt: #f4f5f0;
+      --surface: #ffffff;
+      --border: #e2e3de;
+      --text: #1b1c18;
+      --text-sub: #6b6c68;
+      --text-muted: #9b9c98;
+      --hover: #eaebea;
+
+      --shadow-sm: 0 1px 4px rgba(0, 0, 0, .06), 0 1px 2px rgba(0, 0, 0, .04);
+      --shadow-md: 0 4px 18px rgba(0, 0, 0, .09), 0 1px 4px rgba(0, 0, 0, .05);
+      --shadow-lg: 0 12px 44px rgba(0, 0, 0, .13), 0 2px 10px rgba(0, 0, 0, .07);
+
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --radius-full: 9999px;
+
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-inout: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    [data-theme="dark"] {
+      --accent: #daff99;
+      --accent-dark: #b8e673;
+      --accent-soft: rgba(218, 255, 153, .14);
+      --accent-glow: rgba(218, 255, 153, .22);
+
+      --bg: #052d23;
+      --bg-alt: #04241c;
+      --surface: #073b2e;
+      --border: #0a4a3a;
+      --text: #f4f4f4;
+      --text-sub: #a0b8b0;
+      --text-muted: #608075;
+      --hover: #063428;
+
+      --shadow-sm: 0 1px 4px rgba(0, 0, 0, .25), 0 1px 2px rgba(0, 0, 0, .18);
+      --shadow-md: 0 4px 18px rgba(0, 0, 0, .35), 0 1px 4px rgba(0, 0, 0, .22);
+      --shadow-lg: 0 12px 44px rgba(0, 0, 0, .5), 0 2px 10px rgba(0, 0, 0, .28);
+    }
+
+    /* Light mode nav contrast */
+    [data-theme="light"] .nav {
+      background: rgba(244, 245, 240, 0.92);
+      border-bottom-color: #d0d2ca;
+    }
+
+    /* ── Reset ── */
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background .3s var(--ease-inout), color .3s var(--ease-inout);
+      -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* Subtle grain/noise texture overlay */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.028;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='grain'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23grain)' opacity='1'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+      mix-blend-mode: overlay;
+    }
+
+    [data-theme="dark"] body::after {
+      opacity: 0.045;
+      mix-blend-mode: soft-light;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    /* ══ NAV — iOS 26 Glass Pill ══���═════════════════════════════════ */
+    .nav {
+      position: fixed;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;
+      width: calc(100% - 32px);
+      max-width: 900px;
+      background: rgba(234, 236, 228, .82);
+      border: 1px solid rgba(208, 210, 202, .7);
+      border-radius: var(--radius-full);
+      backdrop-filter: blur(24px) saturate(1.8);
+      -webkit-backdrop-filter: blur(24px) saturate(1.8);
+      box-shadow:
+        0 4px 24px rgba(0, 0, 0, .08),
+        0 1px 3px rgba(0, 0, 0, .05),
+        inset 0 1px 0 rgba(255, 255, 255, .5);
+      transition: background .3s, border-color .3s, box-shadow .3s;
+      right: auto;
+    }
+
+    [data-theme="dark"] .nav {
+      background: rgba(5, 45, 35, .5);
+      border-color: rgba(255, 255, 255, .08);
+      box-shadow:
+        0 4px 24px rgba(0, 0, 0, .25),
+        0 1px 3px rgba(0, 0, 0, .18),
+        inset 0 1px 0 rgba(255, 255, 255, .04);
+    }
+
+    .nav-inner {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 0 8px 0 18px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      height: 28px;
+      width: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-sub);
+      transition: color .2s;
+      letter-spacing: .01em;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-links a.active {
+      color: var(--accent);
+    }
+
+    /* Nav dropdown */
+    .nav-dd {
+      position: relative;
+    }
+
+    .nav-dd-trigger {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text-sub);
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-family: inherit;
+      padding: 0;
+      transition: color .2s;
+    }
+
+    .nav-dd-trigger:hover {
+      color: var(--text);
+    }
+
+    .nav-dd-trigger svg {
+      width: 10px;
+      height: 10px;
+      transition: transform .25s var(--ease-out);
+    }
+
+    .nav-dd-menu {
+      position: absolute;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%) translateY(-6px);
+      min-width: 160px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 4px;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: opacity .2s, transform .2s var(--ease-out), visibility .2s;
+    }
+
+    .nav-dd:hover .nav-dd-menu {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    .nav-dd:hover .nav-dd-trigger svg {
+      transform: rotate(180deg);
+    }
+
+    .nav-dd-menu a {
+      display: block;
+      padding: 8px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      color: var(--text-sub);
+      transition: background .15s, color .15s;
+    }
+
+    .nav-dd-menu a:hover {
+      background: var(--hover);
+      color: var(--text);
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    /* Theme button */
+    .theme-btn {
+      width: 30px;
+      height: 30px;
+      border-radius: var(--radius-full);
+      border: none;
+      background: rgba(0, 0, 0, .06);
+      color: var(--text-sub);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background .2s, color .2s;
+    }
+
+    [data-theme="dark"] .theme-btn {
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .theme-btn:hover {
+      background: rgba(0, 0, 0, .12);
+      color: var(--text);
+    }
+
+    [data-theme="dark"] .theme-btn:hover {
+      background: rgba(255, 255, 255, .18);
+    }
+
+    /* Sign in btn */
+    .nav-signin {
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      background: var(--accent);
+      color: #0d1a00;
+      border: none;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: background .2s, transform .12s;
+    }
+
+    .nav-signin:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    /* Nav profile dropdown */
+    .nav-profile {
+      position: relative;
+    }
+
+    .nav-profile-btn {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      border: 2px solid var(--border);
+      background: var(--surface);
+      cursor: pointer;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color .2s;
+    }
+
+    .nav-profile-btn:hover {
+      border-color: var(--accent);
+    }
+
+    .nav-profile-btn img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .nav-profile-btn .nav-profile-initial {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .nav-profile-menu {
+      position: absolute;
+      top: calc(100% + 8px);
+      right: 0;
+      min-width: 160px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 4px;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translateY(-6px);
+      transition: opacity .2s, transform .2s var(--ease-out), visibility .2s;
+      z-index: 200;
+    }
+
+    .nav-profile-menu.open {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
+
+    .nav-profile-menu a,
+    .nav-profile-menu button {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-sub);
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      font-family: inherit;
+      transition: background .15s, color .15s;
+    }
+
+    .nav-profile-menu a:hover,
+    .nav-profile-menu button:hover {
+      background: var(--hover);
+      color: var(--text);
+    }
+
+    .nav-profile-menu button.profile-signout {
+      color: #ed2939;
+    }
+
+    .nav-profile-menu button.profile-signout:hover {
+      background: rgba(237, 41, 57, .1);
+      color: #ed2939;
+    }
+
+    /* Mobile menu button */
+    .nav-mobile-btn {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border: none;
+      background: none;
+      color: var(--text);
+      cursor: pointer;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .nav-mobile-btn svg {
+      pointer-events: none;
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px;
+      left: 16px;
+      right: 16px;
+      bottom: auto;
+      max-height: calc(100vh - 88px);
+      background: rgba(255, 255, 255, .85);
+      backdrop-filter: blur(24px) saturate(1.8);
+      -webkit-backdrop-filter: blur(24px) saturate(1.8);
+      border: 1px solid rgba(255, 255, 255, .45);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .12);
+      padding: 16px 20px;
+      z-index: 99;
+      flex-direction: column;
+      gap: 4px;
+      overflow-y: auto;
+    }
+
+    [data-theme="dark"] .mobile-menu {
+      background: rgba(5, 45, 35, .85);
+      border-color: rgba(255, 255, 255, .08);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, .4);
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu a,
+    .mobile-menu button.mob-dd-btn {
+      display: block;
+      padding: 12px 0;
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text-sub);
+      border: none;
+      background: none;
+      cursor: pointer;
+      font-family: inherit;
+      width: 100%;
+      text-align: left;
+      transition: color .15s;
+    }
+
+    .mobile-menu a:hover,
+    .mobile-menu button.mob-dd-btn:hover {
+      color: var(--text);
+    }
+
+    .mobile-menu a.active {
+      color: var(--accent);
+    }
+
+    .mob-dd-sub {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .3s var(--ease-inout);
+    }
+
+    .mob-dd-sub.open {
+      max-height: 120px;
+    }
+
+    .mob-dd-sub a {
+      padding: 8px 0 8px 16px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+
+      .nav-links,
+      .nav-right .nav-signin,
+      #desktopAuth {
+        display: none !important;
+      }
+
+      .nav-mobile-btn {
+        display: flex;
+      }
+
+      .nav-right {
+        gap: 8px;
+      }
+
+      /* Show theme btn in mobile too */
+      .nav-right .theme-btn {
+        display: flex;
+      }
+    }
+
+    /* ══ SECTIONS ════════════════════════════════════════════════════ */
+    .section {
+      padding: 80px 24px;
+    }
+
+    .section-alt {
+      background: var(--bg-alt);
+    }
+
+    .models-section {
+      background: #052e24;
+    }
+
+    [data-theme="dark"] .models-section {
+      background: #04241c;
+    }
+
+    .models-section .sec-title {
+      color: #f4f7f3;
+    }
+
+    .models-section .sec-sub {
+      color: #b3c8c0;
+    }
+
+    .models-section .model-badge {
+      background: rgba(255, 255, 255, .03);
+      border-color: rgba(255, 255, 255, .14);
+    }
+
+    .models-section .model-badge:hover {
+      border-color: #a7e169;
+      background: rgba(167, 225, 105, .12);
+    }
+
+    .models-section .model-badge span {
+      color: #edf3ef;
+    }
+
+    .models-section .model-badge:hover span {
+      color: #ffffff;
+    }
+
+    .models-section .gpt-logo {
+      filter: invert(1) brightness(2);
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .container-narrow {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    /* ══ HERO — Clean Minimalist Human-Made ══════════════════════════ */
+    .hero {
+      padding: 140px 24px 100px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #08130f;
+    }
+
+    [data-theme="light"] .hero {
+      background: #0a120f;
+    }
+
+    .hero::before {
+      content: none;
+    }
+
+    [data-theme="light"] .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0, 0, 0, .34) 0%, rgba(0, 0, 0, .22) 38%, rgba(0, 0, 0, .4) 100%);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: none;
+    }
+
+    [data-theme="dark"] .hero::before {
+      content: none;
+    }
+
+    [data-theme="dark"] .hero::after {
+      content: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-video-bg,
+    .future-video-bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      pointer-events: none;
+    }
+
+    .hero-video-bg {
+      opacity: .26;
+      filter: saturate(1.02) contrast(1.02);
+    }
+
+    [data-theme="light"] .hero-video-bg {
+      opacity: .5;
+      filter: saturate(1.06) contrast(1.08) brightness(.9);
+    }
+
+    [data-theme="dark"] .hero-video-bg {
+      opacity: .42;
+    }
+
+    [data-theme="light"] .hero .hero-title,
+    [data-theme="light"] .hero .hero-sub {
+      color: #f5f8f3;
+    }
+
+    [data-theme="light"] .hero .btn-ghost {
+      border-color: rgba(255, 255, 255, .28);
+      color: #f5f8f3;
+      background: rgba(255, 255, 255, .05);
+    }
+
+    [data-theme="light"] .hero .btn-ghost:hover {
+      border-color: rgba(255, 255, 255, .46);
+      background: rgba(255, 255, 255, .1);
+    }
+
+    .hero-title {
+      font-family: 'Space Grotesk', 'DM Sans', sans-serif;
+      font-weight: 800;
+      font-size: clamp(48px, 7.5vw, 88px);
+      line-height: 1.05;
+      color: var(--text);
+      margin-bottom: 24px;
+      letter-spacing: -.04em;
+      text-align: center;
+    }
+
+    .hero-title-reveal {
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: .04em;
+      overflow: visible;
+      margin-inline: auto;
+    }
+
+    .hero-title-row {
+      display: flex;
+      justify-content: center;
+      gap: .18em;
+      flex-wrap: wrap;
+      overflow: hidden;
+    }
+
+    .hero-title-word {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      padding: 0 .02em .08em;
+    }
+
+    .hero-title-word>span,
+    .hero-title-word em {
+      display: inline-block;
+      transform: translateY(1.08em) scale(.96) rotate(3deg);
+      transform-origin: 50% 100%;
+      opacity: 0;
+      filter: blur(8px);
+      animation: heroWordRise .95s var(--ease-out) forwards;
+      animation-delay: var(--word-delay, 0s);
+      will-change: transform, opacity, filter;
+    }
+
+    .hero-title-word-accent {
+      padding-inline: .12em;
+    }
+
+    .hero-title-word-accent::after {
+      content: '';
+      position: absolute;
+      left: .02em;
+      right: .02em;
+      bottom: .18em;
+      height: .24em;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, var(--accent-soft), rgba(167, 225, 105, .24), transparent);
+      transform: scaleX(0);
+      transform-origin: left center;
+      opacity: 0;
+      animation: heroAccentSweep 1s var(--ease-out) .62s forwards;
+      z-index: 0;
+    }
+
+    .hero-title-word-accent em {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-title-reveal::after {
+      content: '';
+      position: absolute;
+      inset: auto -6% 12% -6%;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(167, 225, 105, .85), transparent);
+      opacity: 0;
+      filter: blur(1px);
+      animation: heroLineFlash 1.2s var(--ease-out) .78s forwards;
+      pointer-events: none;
+    }
+
+    .hero-title em {
+      font-style: italic;
+      font-family: Georgia, 'Instrument Serif', serif;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: -.02em;
+    }
+
+    @keyframes heroWordRise {
+      0% {
+        opacity: 0;
+        filter: blur(8px);
+        transform: translateY(1.08em) scale(.96) rotate(3deg);
+      }
+
+      100% {
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0) scale(1) rotate(0);
+      }
+    }
+
+    @keyframes heroAccentSweep {
+      0% {
+        opacity: 0;
+        transform: scaleX(0);
+      }
+
+      40% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 1;
+        transform: scaleX(1);
+      }
+    }
+
+    @keyframes heroLineFlash {
+      0% {
+        opacity: 0;
+        transform: scaleX(.25);
+      }
+
+      35% {
+        opacity: .95;
+      }
+
+      100% {
+        opacity: .28;
+        transform: scaleX(1);
+      }
+    }
+
+    @media (max-width: 700px) {
+      .hero {
+        padding: 128px 18px 82px;
+      }
+
+      .hero-title {
+        font-size: clamp(36px, 11vw, 60px);
+        line-height: 1.1;
+      }
+
+      .hero-title-row {
+        gap: .14em;
+      }
+
+      .hero-title-word-accent::after {
+        bottom: .14em;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .hero-title-word>span,
+      .hero-title-word em,
+      .hero-title-word-accent::after,
+      .hero-title-reveal::after {
+        animation: none;
+        opacity: 1;
+        filter: none;
+        transform: none;
+      }
+
+      .future-stage-content,
+      .laptop-section .sec-sub-fun {
+        transform: none;
+        opacity: 1;
+      }
+    }
+
+    .hero-sub {
+      font-size: 15px;
+      color: var(--text-sub);
+      max-width: 440px;
+      margin: 0 auto 36px;
+      line-height: 1.85;
+      font-weight: 400;
+    }
+
+    [data-theme="light"] .hero-sub {
+      color: #474a43;
+      max-width: 400px;
+      font-size: 14px;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+
+    /* ══ MOCKUP ══════════════════════════════════════════════════════ */
+    .hero-mockup {
+      max-width: 1000px;
+      margin: 0 auto;
+      perspective: 1000px;
+    }
+
+    .mockup-message {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 24px;
+      animation: fadeUp 0.5s ease-out forwards;
+      opacity: 0;
+    }
+
+    .mockup-message:nth-child(1) {
+      animation-delay: 0.5s;
+    }
+
+    .mockup-message:nth-child(2) {
+      animation-delay: 1.5s;
+    }
+
+    .mockup-message:nth-child(3) {
+      animation-delay: 3s;
+    }
+
+    .mockup-message:nth-child(4) {
+      animation-delay: 4.5s;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .mockup-message.user {
+      flex-direction: row-reverse;
+    }
+
+    .mockup-message.user .mockup-message-content {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      padding: 12px 16px;
+      border-radius: 16px 16px 4px 16px;
+      font-size: 14px;
+      max-width: 80%;
+    }
+
+    .mockup-message.ai .mockup-message-content {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+      max-width: 80%;
+      padding-top: 4px;
+    }
+
+    .mockup-message-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 8px;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid var(--border);
+    }
+
+    .mockup-message-avatar img {
+      width: 16px;
+      height: 16px;
+    }
+
+    .mockup-code-block {
+      margin-top: 12px;
+      background: #1b1c18;
+      border-radius: 8px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+
+    .mockup-code-header {
+      padding: 6px 12px;
+      font-size: 11px;
+      color: #9b9c98;
+      background: rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    .mockup-code-block pre {
+      padding: 12px;
+      margin: 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: #a7e169;
+      overflow-x: auto;
+    }
+
+    .mockup-browser {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      transform: rotateX(5deg) scale(0.95);
+      transition: transform 0.5s var(--ease-out);
+    }
+
+    .hero-mockup:hover .mockup-browser {
+      transform: rotateX(0deg) scale(1);
+    }
+
+    .mockup-header {
+      display: flex;
+      align-items: center;
+      padding: 12px 16px;
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mockup-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .mockup-dots span {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--border);
+    }
+
+    .mockup-dots span:nth-child(1) {
+      background: #ff5f56;
+    }
+
+    .mockup-dots span:nth-child(2) {
+      background: #ffbd2e;
+    }
+
+    .mockup-dots span:nth-child(3) {
+      background: #27c93f;
+    }
+
+    .mockup-url {
+      flex: 1;
+      text-align: center;
+      font-size: 12px;
+      color: var(--text-muted);
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--bg);
+      padding: 4px 12px;
+      border-radius: var(--radius-sm);
+      margin: 0 16px;
+      border: 1px solid var(--border);
+    }
+
+    .mockup-body {
+      display: flex;
+      height: 600px;
+      background: #f4f3eb;
+      color: #1b1c18;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    [data-theme="dark"] .mockup-body {
+      background: #052d23;
+      color: #f4f4f4;
+    }
+
+    .mockup-sidebar {
+      width: 260px;
+      border-right: 1px solid rgba(0, 0, 0, 0.08);
+      display: flex;
+      flex-direction: column;
+      background: #eeeadd;
+    }
+
+    [data-theme="dark"] .mockup-sidebar {
+      background: #04241c;
+      border-right: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mockup-sidebar-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 16px;
+      color: #6b6c68;
+    }
+
+    .mockup-new-chat {
+      margin: 0 16px 24px;
+      background: #a7e169;
+      color: #0d1a00;
+      border-radius: 8px;
+      padding: 10px 16px;
+      font-size: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mockup-sidebar-section {
+      padding: 0 16px 24px;
+    }
+
+    .mockup-sidebar-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: #9b9c98;
+      margin-bottom: 12px;
+      letter-spacing: 0.05em;
+    }
+
+    .mockup-model-select {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      font-size: 13px;
+      color: #1b1c18;
+    }
+
+    [data-theme="dark"] .mockup-model-select {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: #f4f4f4;
+    }
+
+    .mockup-no-history {
+      font-size: 13px;
+      color: #9b9c98;
+      padding: 10px 0;
+    }
+
+    .mockup-user-profile {
+      padding: 16px;
+      border-top: 1px solid rgba(0, 0, 0, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    [data-theme="dark"] .mockup-user-profile {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .mockup-user-avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #a7e169;
+      color: #0d1a00;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .mockup-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #f4f3eb;
+    }
+
+    [data-theme="dark"] .mockup-main {
+      background: #052d23;
+    }
+
+    .mockup-main-header {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      font-size: 15px;
+      font-weight: 500;
+      color: #1b1c18;
+    }
+
+    [data-theme="dark"] .mockup-main-header {
+      color: #f4f4f4;
+    }
+
+    .mockup-chat-area {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    .mockup-welcome {
+      text-align: center;
+      max-width: 600px;
+    }
+
+    .mockup-welcome-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #a7e169;
+      letter-spacing: 0.1em;
+      margin-bottom: 16px;
+    }
+
+    .mockup-welcome-title {
+      font-family: 'Instrument Serif', serif;
+      font-size: 56px;
+      font-style: italic;
+      margin-bottom: 16px;
+      color: #1b1c18;
+    }
+
+    [data-theme="dark"] .mockup-welcome-title {
+      color: #f4f4f4;
+    }
+
+    .mockup-welcome-sub {
+      font-size: 16px;
+      color: #6b6c68;
+      margin-bottom: 40px;
+    }
+
+    .mockup-suggestions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      justify-content: center;
+    }
+
+    .mockup-suggestion {
+      padding: 10px 20px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 24px;
+      font-size: 14px;
+      color: #1b1c18;
+      background: transparent;
+    }
+
+    [data-theme="dark"] .mockup-suggestion {
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      color: #f4f4f4;
+    }
+
+    .mockup-input-area {
+      padding: 0 40px 32px;
+      max-width: 800px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    .mockup-progress {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: #9b9c98;
+      margin-bottom: 12px;
+    }
+
+    .mockup-progress-bar {
+      flex: 1;
+      height: 2px;
+      background: rgba(0, 0, 0, 0.1);
+      border-radius: 1px;
+    }
+
+    [data-theme="dark"] .mockup-progress-bar {
+      background: rgba(255, 255, 255, 0.1);
+    }
+
+    .mockup-input-box {
+      background: rgba(255, 255, 255, 0.4);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    [data-theme="dark"] .mockup-input-box {
+      background: rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .mockup-input-placeholder {
+      font-size: 16px;
+      color: #9b9c98;
+    }
+
+    .mockup-input-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .mockup-input-model {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      border-radius: 8px;
+      font-size: 13px;
+      color: #1b1c18;
+    }
+
+    [data-theme="dark"] .mockup-input-model {
+      background: rgba(0, 0, 0, 0.4);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      color: #f4f4f4;
+    }
+
+    .mockup-send-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #1b1c18;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    [data-theme="dark"] .mockup-send-btn {
+      background: #f4f4f4;
+      color: #052d23;
+    }
+
+    .mockup-input-hint {
+      text-align: center;
+      font-size: 12px;
+      color: #9b9c98;
+      margin-top: 12px;
+    }
+
+    @media (max-width: 768px) {
+      .mockup-sidebar {
+        display: none;
+      }
+
+      .mockup-body {
+        height: 500px;
+      }
+
+      .mockup-input-area {
+        padding: 0 20px 20px;
+      }
+    }
+
+    /* ══ CHAT PREVIEW ════════════════════════════════════════════════ */
+    .chat-preview {
+      max-width: 460px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+
+    .chat-preview-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      background: var(--bg-alt);
+    }
+
+    .chat-preview-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .chat-preview-avatar img {
+      width: 14px;
+      height: 14px;
+    }
+
+    .chat-preview-name {
+      font-size: 12px;
+      font-weight: 700;
+      flex: 1;
+    }
+
+    .chat-preview-model {
+      font-size: 10px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-muted);
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+    }
+
+    .chat-body {
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .chat-msg-user {
+      align-self: flex-end;
+      padding: 8px 13px;
+      font-size: 12px;
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 14px 14px 3px 14px;
+      max-width: 78%;
+      color: var(--text);
+    }
+
+    .chat-msg-ai {
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+      align-self: flex-start;
+      max-width: 88%;
+    }
+
+    .chat-msg-ai img {
+      width: 16px;
+      height: 16px;
+      margin-top: 3px;
+      flex-shrink: 0;
+    }
+
+    .chat-msg-ai-bubble {
+      background: var(--bg-alt);
+      border: 1px solid var(--border);
+      border-radius: 3px 14px 14px 14px;
+      padding: 8px 13px;
+    }
+
+    .chat-msg-ai-text {
+      font-size: 12px;
+      color: var(--text-sub);
+      line-height: 1.65;
+    }
+
+    .color-swatches {
+      display: flex;
+      gap: 4px;
+      margin-top: 7px;
+    }
+
+    .color-swatches span {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+    }
+
+    .chat-typing {
+      display: flex;
+      gap: 4px;
+      align-items: center;
+      padding: 3px 0;
+    }
+
+    .chat-typing span {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--text-muted);
+      animation: tdot .9s ease-in-out infinite;
+    }
+
+    .chat-typing span:nth-child(2) {
+      animation-delay: .15s
+    }
+
+    .chat-typing span:nth-child(3) {
+      animation-delay: .3s
+    }
+
+    @keyframes tdot {
+
+      0%,
+      60%,
+      100% {
+        opacity: .3;
+        transform: translateY(0)
+      }
+
+      30% {
+        opacity: 1;
+        transform: translateY(-3px)
+      }
+    }
+
+    /* ══ BUTTONS ═════════════════════════════════════════════════════ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 24px;
+      border-radius: var(--radius-sm);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13.5px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all .2s var(--ease-out);
+      letter-spacing: .01em;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #0d1a00;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--text-sub);
+      transform: translateY(-1px);
+    }
+
+    .btn-sm {
+      padding: 9px 18px;
+      font-size: 12.5px;
+    }
+
+    /* ══ MODELS MARQUEE ══════════════════════════════════════════════ */
+    .marquee-wrap {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 24px 0;
+      mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    }
+
+    .marquee-content {
+      display: flex;
+      gap: 16px;
+      width: max-content;
+      animation: scroll 35s linear infinite;
+    }
+
+    .marquee-content:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+      to {
+        transform: translateX(calc(-50% - 8px));
+      }
+    }
+
+    .model-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 20px;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      transition: transform .3s var(--ease-out), border-color .3s, background .3s;
+    }
+
+    .model-badge:hover {
+      transform: translateY(-2px);
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+
+    .model-badge img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .model-badge span {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-sub);
+      white-space: nowrap;
+      letter-spacing: .01em;
+    }
+
+    .model-badge:hover span {
+      color: var(--text);
+    }
+
+    /* ══ PRICING SECTION ═══════════════ */
+    .pricing-section {
+      --p-bg: var(--bg);
+      --p-bg-alt: var(--bg-alt);
+      --p-surface: var(--surface);
+      --p-surface2: var(--bg-alt);
+      --p-border: var(--border);
+      --p-border2: var(--border);
+      --p-text: var(--text);
+      --p-text-sub: var(--text-sub);
+      --p-text-muted: var(--text-muted);
+      --p-hover: var(--hover);
+      --p-popular-bg: var(--surface);
+      --p-dropdown-bg: var(--bg-alt);
+      --p-shadow-hover: 0 4px 12px rgba(0, 0, 0, .02);
+      --p-shadow-pop: 0 0 0 1px var(--accent), 0 0 10px rgba(167, 225, 105, .05);
+      --p-shadow-pop-hover: 0 0 0 1px var(--accent), 0 4px 12px rgba(0, 0, 0, .02), 0 0 15px rgba(167, 225, 105, .08);
+
+      background: var(--p-bg);
+      color: var(--p-text);
+    }
+
+    [data-theme="dark"] .pricing-section {
+      --p-bg: #052d23;
+      --p-bg-alt: #04241c;
+      --p-surface: #073b2e;
+      --p-surface2: #084234;
+      --p-border: #0a4a3a;
+      --p-border2: #0c5744;
+      --p-text: #f4f4f4;
+      --p-text-sub: #a0b8b0;
+      --p-text-muted: #608075;
+      --p-hover: #063428;
+      --p-popular-bg: #063428;
+      --p-dropdown-bg: #04241c;
+      --p-shadow-hover: 0 8px 20px rgba(0, 0, 0, .15);
+      --p-shadow-pop: 0 0 0 1px var(--accent), 0 0 15px rgba(218, 255, 153, .02);
+      --p-shadow-pop-hover: 0 0 0 1px var(--accent), 0 8px 20px rgba(0, 0, 0, .2), 0 0 20px rgba(218, 255, 153, .05);
+    }
+
+    .pricing-section .sec-title {
+      color: var(--p-text);
+    }
+
+    .pricing-section .sec-sub {
+      color: var(--p-text-sub);
+    }
+
+    /* Background noise texture */
+    .pricing-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      opacity: .4;
+    }
+
+    .pricing-section {
+      position: relative;
+      z-index: 5;
+      margin-top: calc(-1 * min(26vh, 240px));
+      padding-top: calc(52px + min(5vh, 40px));
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      overflow: hidden;
+      box-shadow: 0 -28px 54px rgba(0, 0, 0, 0.08);
+      isolation: isolate;
+    }
+
+    [data-theme="dark"] .pricing-section {
+      box-shadow: 0 -28px 54px rgba(0, 0, 0, 0.38);
+    }
+
+    /* Section sub-label */
+    .pricing-toggle-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .billing-label {
+      font-size: 12.5px;
+      font-weight: 600;
+      color: var(--p-text-sub);
+      letter-spacing: .04em;
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      position: relative;
+      align-items: start;
+    }
+
+    /* Bottom 2 cards — centered row */
+    .pricing-grid .plan-card:nth-child(4),
+    .pricing-grid .plan-card:nth-child(5) {
+      grid-column: auto;
+    }
+
+    .pricing-grid-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+      max-width: calc(66.66% + 6px);
+      margin: 18px auto 0;
+    }
+
+    @media (max-width: 900px) {
+      .pricing-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .pricing-grid-bottom {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .pricing-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .pricing-grid-bottom {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+      }
+    }
+
+    .plan-card {
+      background: var(--pc-bg, var(--p-surface));
+      color: var(--pc-text, var(--p-text));
+      border: 1px solid var(--pc-border-color, var(--p-border));
+      border-radius: 32px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: visible;
+      transition: transform .4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow .4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .plan-top-box {
+      border: 2px solid var(--pc-text, var(--p-text));
+      border-radius: 24px;
+      padding: 40px 20px 32px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 22px;
+      margin-left: -12px;
+      margin-right: -12px;
+    }
+
+    .plan-mascot {
+      width: 140px;
+      height: 140px;
+      object-fit: contain;
+      filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.1));
+    }
+
+    .plan-btn-new {
+      background: #073b2e;
+      color: #ffffff;
+      border-radius: 50px;
+      padding: 8px 24px;
+      font-size: 15px;
+      font-weight: 700;
+      width: 100%;
+      text-align: center;
+      border: none;
+      cursor: pointer;
+      transition: transform 0.2s var(--ease-out), background 0.2s;
+      font-family: 'DM Sans', sans-serif;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      letter-spacing: .01em;
+    }
+
+    .plan-btn-new::before {
+      content: none;
+    }
+
+    .plan-btn-new::after {
+      content: none;
+    }
+
+    .plan-btn-new:hover {
+      transform: translateY(-2px);
+      background: #052d23;
+      color: #ffffff;
+    }
+
+    .plan-btn-new:active {
+      transform: translateY(0);
+    }
+
+    [data-theme="dark"] .plan-btn-new {
+      background: #073b2e;
+      color: #ffffff;
+      border: none;
+    }
+
+    [data-theme="dark"] .plan-btn-new:hover {
+      background: #052d23;
+      color: #ffffff;
+    }
+
+    [data-theme="dark"] .plan-btn-new:active {
+      background: #073b2e;
+    }
+
+    .plan-name-new {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--pc-text, var(--p-text));
+      letter-spacing: -.02em;
+      margin-bottom: 4px;
+    }
+
+    .plan-price-unit-new {
+      font-size: 14px;
+      color: var(--pc-text, var(--p-text-sub));
+      opacity: 0.8;
+      margin-bottom: 16px;
+    }
+
+    .plan-divider {
+      height: 1px;
+      background: var(--pc-text, var(--p-text));
+      opacity: 0.2;
+      width: 100%;
+      margin: 20px 0;
+      border: none;
+    }
+
+    .plan-models-title-new {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--pc-text, var(--p-text));
+      margin-bottom: 16px;
+    }
+
+    .plan-features-new {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .plan-features-new li {
+      font-size: 14px;
+      color: var(--pc-text, var(--p-text-sub));
+      opacity: 0.9;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      line-height: 1.5;
+    }
+
+    .plan-features-new li::before {
+      content: '✓';
+      font-weight: 700;
+      font-size: 14px;
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: rgba(34, 197, 94, 0.15);
+      color: #16a34a;
+      margin-top: 1px;
+    }
+
+    .plan-features-new li.disabled::before {
+      content: '✕';
+      background: rgba(239, 68, 68, 0.1);
+      color: #ef4444;
+    }
+
+    .plan-features-new li.disabled {
+      opacity: 0.5;
+    }
+
+    .plan-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at bottom right, var(--pc-glow, transparent) 0%, transparent 60%);
+      opacity: 0;
+      transition: opacity .4s;
+      pointer-events: none;
+      border-radius: var(--radius-xl);
+    }
+
+    .plan-card:hover::before {
+      opacity: 1;
+    }
+
+    .plan-card:hover,
+    .plan-card.visible:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--p-shadow-hover);
+    }
+
+    .plan-card.popular {
+      background: var(--pc-bg, var(--p-popular-bg));
+    }
+
+    .plan-card.popular:hover,
+    .plan-card.popular.visible:hover {
+      transform: translateY(-8px);
+    }
+
+    /* Plan header icon */
+    .plan-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 18px;
+      border: 1px solid var(--p-border);
+    }
+
+    .plan-icon svg {
+      width: 26px;
+      height: 26px;
+    }
+
+    .plan-tier {
+      font-size: 10.5px;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--p-text-muted);
+      margin-bottom: 5px;
+    }
+
+    .plan-card.popular .plan-tier {
+      color: var(--accent);
+    }
+
+    .plan-name {
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--p-text);
+      letter-spacing: -.02em;
+      margin-bottom: 2px;
+    }
+
+    .plan-price {
+      font-size: 36px;
+      font-weight: 800;
+      color: var(--pc-text, var(--p-text));
+      line-height: 1;
+      margin-top: 14px;
+      letter-spacing: -.025em;
+    }
+
+    .plan-price sup {
+      font-size: 15px;
+      font-weight: 600;
+      vertical-align: super;
+      margin-right: 2px;
+      color: var(--pc-text, var(--p-text-sub));
+      opacity: 0.8;
+    }
+
+    .plan-price-unit {
+      font-size: 11.5px;
+      font-weight: 400;
+      color: var(--p-text-muted);
+      margin-bottom: 22px;
+      margin-top: 5px;
+    }
+
+    /* ── Models list in plan card ── */
+    .plan-models-direct {
+      margin-bottom: 20px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--p-border);
+    }
+
+    .plan-models-title {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--p-text-muted);
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      margin-bottom: 12px;
+    }
+
+    .plan-models-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .plan-model-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11.5px;
+      font-weight: 600;
+      padding: 5px 10px;
+      border-radius: var(--radius-sm);
+      background: rgba(255, 255, 255, 0.5);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      color: var(--pc-text, var(--p-text));
+      transition: border-color .2s, background .2s;
+    }
+
+    .plan-model-chip:hover {
+      border-color: rgba(0, 0, 0, 0.3);
+      background: rgba(255, 255, 255, 0.8);
+    }
+
+    .plan-model-chip img {
+      width: 14px;
+      height: 14px;
+      object-fit: contain;
+    }
+
+    [data-theme="dark"] .gpt-logo {
+      filter: invert(1) brightness(2);
+    }
+
+    [data-theme="dark"] .plan-card .gpt-logo,
+    [data-theme="dark"] .pm-card .gpt-logo {
+      filter: none;
+    }
+
+    .plan-features {
+      list-style: none;
+      flex: 1;
+      margin-bottom: 20px;
+    }
+
+    .plan-features li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 12.5px;
+      color: var(--p-text-sub);
+      padding: 6px 0;
+      line-height: 1.5;
+      border-bottom: 1px solid var(--p-border);
+    }
+
+    .plan-features li:last-child {
+      border-bottom: none;
+    }
+
+    .plan-features li svg {
+      width: 14px;
+      height: 14px;
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .plan-features li.disabled {
+      opacity: .3;
+    }
+
+    .plan-features li.disabled svg {
+      color: var(--p-text-muted);
+    }
+
+    .plan-btn {
+      width: 100%;
+      padding: 11px;
+      text-align: center;
+      border-radius: var(--radius-sm);
+      font-size: 13px;
+      font-weight: 700;
+      font-family: 'DM Sans', sans-serif;
+      cursor: pointer;
+      letter-spacing: .02em;
+      transition: all .2s var(--ease-out);
+      border: 1px solid var(--p-border2);
+      background: var(--p-surface2);
+      color: var(--p-text-sub);
+    }
+
+    .plan-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(167, 225, 105, .05);
+    }
+
+    .plan-btn-primary {
+      background: var(--accent);
+      color: #0d1a00;
+      border-color: var(--accent);
+    }
+
+    .plan-btn-primary:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      color: #0d1a00;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(167, 225, 105, .25);
+    }
+
+    /* Popular badge */
+    .popular-badge {
+      position: absolute;
+      top: -1px;
+      right: 16px;
+      background: var(--accent);
+      color: #0d1a00;
+      font-size: 9.5px;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    /* ══ COMPARISON TABLE ═══════════════════════════════════════════ */
+    .comp-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      overflow-x: auto;
+    }
+
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .comp-table th,
+    .comp-table td {
+      padding: 10px 14px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      font-size: 12.5px;
+    }
+
+    .comp-table th {
+      font-size: 10.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .07em;
+      color: var(--text-muted);
+      background: var(--bg-alt);
+    }
+
+    .comp-table th.highlight {
+      color: var(--accent);
+    }
+
+    .comp-table td:first-child {
+      text-align: left;
+      font-weight: 500;
+      color: var(--text);
+    }
+
+    .comp-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    .comp-table tbody tr {
+      transition: background .15s;
+    }
+
+    .comp-table tbody tr:hover {
+      background: var(--hover);
+    }
+
+    .comp-check {
+      color: #111310;
+      font-weight: 700;
+    }
+
+    .comp-x {
+      color: #111310;
+      opacity: .18;
+      font-weight: 700;
+    }
+
+    [data-theme="dark"] .comp-check {
+      color: var(--accent);
+    }
+
+    [data-theme="dark"] .comp-x {
+      color: var(--text-muted);
+      opacity: .3;
+    }
+
+    .comp-model-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .comp-model-label img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    .comp-plan-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .comp-plan-header img {
+      width: 32px;
+      height: 32px;
+      object-fit: contain;
+    }
+
+    /* ══ AI STRENGTHS — Simple Cards ════════════════════════════════ */
+    .strengths-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 600px) {
+      .strengths-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .strength-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+
+    .strength-card:hover {
+      border-color: var(--sc-accent, var(--border));
+      box-shadow: var(--shadow-sm);
+    }
+
+    .strength-top {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+
+    .strength-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .strength-icon img {
+      width: 22px;
+      height: 22px;
+      object-fit: contain;
+    }
+
+    .strength-label {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: var(--radius-full);
+      letter-spacing: .02em;
+    }
+
+    .strength-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+
+    .strength-desc {
+      font-size: 13.5px;
+      color: var(--text-sub);
+      line-height: 1.7;
+    }
+
+    /* ══ BLOG ════════════════════════════════════════════════════════ */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    @media (max-width: 900px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .blog-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .blog-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      transition: transform .3s var(--ease-out), box-shadow .3s, border-color .3s;
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+
+    .blog-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }
+
+    .blog-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      background: var(--bg-alt);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .blog-content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+    }
+
+    .blog-meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .blog-category {
+      color: var(--accent);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .blog-post-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .blog-excerpt {
+      font-size: 14px;
+      color: var(--text-sub);
+      margin-bottom: 24px;
+      line-height: 1.6;
+      flex: 1;
+    }
+
+    .blog-read-more {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color .2s;
+    }
+
+    .blog-read-more:hover {
+      color: var(--accent);
+    }
+
+    .blog-read-more svg {
+      width: 14px;
+      height: 14px;
+      transition: transform .2s;
+    }
+
+    .blog-read-more:hover svg {
+      transform: translateX(4px);
+    }
+
+    /* ══ AI STRENGTHS SECTION ═══════════════════════════════════════ */
+    .strengths-section {
+      position: relative;
+      background:
+        radial-gradient(circle at top left, rgba(167, 225, 105, .12), transparent 34%),
+        radial-gradient(circle at 85% 18%, rgba(99, 102, 241, .12), transparent 28%),
+        linear-gradient(180deg, #fbfcf7 0%, #f2f5ea 100%);
+      overflow: hidden;
+    }
+
+    [data-theme="dark"] .strengths-section {
+      background:
+        radial-gradient(circle at top left, rgba(218, 255, 153, .12), transparent 34%),
+        radial-gradient(circle at 85% 18%, rgba(129, 140, 248, .14), transparent 28%),
+        linear-gradient(180deg, #08271f 0%, #061f18 100%);
+    }
+
+    .strengths-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .18), transparent 42%),
+        radial-gradient(circle at 28% 75%, rgba(251, 146, 60, .1), transparent 22%),
+        radial-gradient(circle at 78% 62%, rgba(168, 85, 247, .1), transparent 20%);
+      pointer-events: none;
+    }
+
+    [data-theme="dark"] .strengths-section::before {
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .03), transparent 42%),
+        radial-gradient(circle at 28% 75%, rgba(251, 146, 60, .14), transparent 22%),
+        radial-gradient(circle at 78% 62%, rgba(168, 85, 247, .14), transparent 20%);
+    }
+
+    .strengths-section .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ══ FAQ ════════════════════════════════════════════════════════ */
+    .faq-section {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-section .container-narrow {
+      position: relative;
+      z-index: 1;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-btn {
+      width: 100%;
+      padding: 18px 0;
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      text-align: left;
+      transition: color .2s;
+    }
+
+    .faq-btn:hover {
+      color: var(--accent);
+    }
+
+    .faq-btn svg {
+      width: 16px;
+      height: 16px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      transition: transform .25s var(--ease-out);
+    }
+
+    .faq-btn.open svg {
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .35s var(--ease-inout);
+    }
+
+    .faq-answer.open {
+      max-height: 200px;
+    }
+
+    .faq-answer p {
+      padding-bottom: 18px;
+      font-size: 13px;
+      color: var(--text-sub);
+      line-height: 1.75;
+    }
+
+    /* ══ CTA ═════════════════════════════════════════════════════════ */
+    .cta-panel {
+      padding: 10px 0 2px;
+    }
+
+    .cta-layout {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      text-align: left;
+    }
+
+    .cta-copy-block {
+      flex: 1 1 560px;
+      min-width: 0;
+    }
+
+    .cta-actions-block {
+      flex: 0 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    .cta-kicker {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .cta-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 4.8vw, 50px);
+      line-height: 1.12;
+      letter-spacing: -.03em;
+      color: var(--text);
+      max-width: 560px;
+      margin: 0 0 16px;
+      text-wrap: balance;
+    }
+
+    .cta-title-brand,
+    .cta-title-text {
+      display: block;
+    }
+
+    .cta-title-brand {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      letter-spacing: -.03em;
+      margin-bottom: 6px;
+    }
+
+    .cta-title-brand-mark {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      font-style: italic;
+      letter-spacing: -.03em;
+    }
+
+    .cta-title-text {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      letter-spacing: -.02em;
+    }
+
+    .cta-copy {
+      font-size: 14px;
+      color: var(--text-sub);
+      max-width: 520px;
+      margin: 0;
+      line-height: 1.85;
+    }
+
+    .cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 18px;
+    }
+
+    .cta-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--text-muted);
+      font-size: 12px;
+      letter-spacing: .01em;
+    }
+
+    .cta-meta span {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .cta-meta span+span::before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: currentColor;
+      opacity: .45;
+      display: inline-block;
+      margin: 0 10px 0 0;
+    }
+
+    @media (max-width: 600px) {
+      .cta-panel {
+        padding-top: 4px;
+      }
+
+      .cta-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+        text-align: center;
+      }
+
+      .cta-copy-block,
+      .cta-actions-block {
+        flex: none;
+        width: 100%;
+      }
+
+      .cta-actions-block {
+        align-items: center;
+      }
+
+      .cta-title {
+        font-size: clamp(28px, 10vw, 42px);
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-title-brand {
+        margin-bottom: 4px;
+      }
+
+      .cta-copy {
+        font-size: 13px;
+        margin-bottom: 22px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .cta-actions {
+        gap: 10px;
+        justify-content: center;
+      }
+
+      .cta-meta {
+        gap: 8px;
+        font-size: 11.5px;
+        justify-content: center;
+      }
+    }
+
+    /* ══ FOOTER ══════════════════════════════════════════════════════ */
+    .footer {
+      padding: 64px 24px 32px;
+      border-top: 1px solid var(--border);
+      background: var(--bg-alt);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 48px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      max-width: 320px;
+    }
+
+    .footer-brand img {
+      height: 24px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand p {
+      font-size: 13.5px;
+      color: var(--text-sub);
+      line-height: 1.6;
+    }
+
+    .footer-contact-info {
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--text-sub);
+    }
+
+    .contact-item svg {
+      width: 16px;
+      height: 16px;
+      color: var(--accent);
+    }
+
+    .footer-grid {
+      display: flex;
+      gap: 64px;
+      flex-wrap: wrap;
+      flex: 1;
+      justify-content: flex-end;
+    }
+
+    .footer-col {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .footer-col a {
+      font-size: 13.5px;
+      color: var(--text-sub);
+      transition: color .2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent);
+    }
+
+    .footer-col.footer-newsletter {
+      max-width: 280px;
+    }
+
+    .footer-newsletter p {
+      font-size: 13px;
+      color: var(--text-sub);
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+
+    .newsletter-form {
+      display: flex;
+      gap: 8px;
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 13px;
+      font-family: inherit;
+      outline: none;
+      transition: border-color .2s;
+    }
+
+    .newsletter-form input:focus {
+      border-color: var(--accent);
+    }
+
+    .newsletter-form button {
+      padding: 10px 16px;
+      border-radius: var(--radius-sm);
+      border: none;
+      background: var(--accent);
+      color: #0d1a00;
+      font-size: 13px;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background .2s, transform .1s;
+    }
+
+    .newsletter-form button:hover {
+      background: var(--accent-dark);
+      transform: translateY(-1px);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 32px;
+      border-top: 1px solid var(--border);
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .footer-left span {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 16px;
+    }
+
+    .footer-social a {
+      color: var(--text-muted);
+      transition: color .2s, transform .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-social a:hover {
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .footer-social svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    @media (max-width: 768px) {
+      .footer-top {
+        flex-direction: column;
+        gap: 40px;
+      }
+
+      .footer-grid {
+        gap: 40px;
+        justify-content: space-between;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    /* ══ SECTION TITLES ═════════════════════════════════════════════ */
+    .sec-title {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: clamp(28px, 4.8vw, 40px);
+      line-height: 1.08;
+      letter-spacing: -.03em;
+      text-align: center;
+      margin-bottom: 8px;
+      color: var(--text);
+    }
+
+    .sec-title .title-serif,
+    .sec-title-fun .title-serif {
+      font-family: 'Instrument Serif', Georgia, serif;
+      font-weight: 400;
+      font-style: italic;
+      letter-spacing: -.02em;
+    }
+
+    .sec-sub {
+      font-size: 13.5px;
+      color: var(--text-sub);
+      text-align: center;
+      max-width: 420px;
+      margin: 0 auto 36px;
+    }
+
+    /* ══ UTILITIES ═══════════════════════════════════════════════════ */
+    .text-accent {
+      color: var(--accent);
+    }
+
+    .relative {
+      position: relative;
+    }
+
+    /* ══ ANIMATIONS ══════════════════════════════════════════════════ */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+    }
+
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .delay-100 {
+      transition-delay: 100ms;
+    }
+
+    .delay-200 {
+      transition-delay: 200ms;
+    }
+
+    .delay-300 {
+      transition-delay: 300ms;
+    }
+
+    /* ══ LAPTOP MOCKUP ══════════════════════════════════════════════ */
+    .laptop-section {
+      --future-progress: 0;
+      padding: 0 24px;
+      background: #04150f;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+      min-height: calc(100vh - 56px);
+    }
+
+    [data-theme="light"] .laptop-section {
+      background: #0a1713;
+    }
+
+    .laptop-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(4, 21, 15, .24), rgba(4, 21, 15, .48));
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .future-video-bg {
+      opacity: .3;
+      filter: none;
+      transform: translateZ(0);
+    }
+
+    .future-stage {
+      position: sticky;
+      top: 56px;
+      z-index: 1;
+      min-height: calc(100vh - 56px);
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: center;
+      padding-top: clamp(92px, 14vh, 148px);
+    }
+
+    .future-stage-content {
+      max-width: 760px;
+      margin: 0 auto;
+      color: #f3f7f1;
+      opacity: calc(1 - (var(--future-progress) * 0.1));
+      transform-origin: center center;
+      transform: translate3d(0, calc(var(--future-progress) * 10px), 0);
+      transition: transform .12s linear, opacity .12s linear;
+      will-change: transform, opacity;
+      backface-visibility: hidden;
+      position: relative;
+      z-index: 1;
+    }
+
+    .future-stage-content.fade-up,
+    .future-stage-content.fade-up.visible {
+      opacity: calc(1 - (var(--future-progress) * 0.1));
+      transform: translate3d(0, calc(var(--future-progress) * 10px), 0);
+    }
+
+    .future-kicker {
+      display: inline-block;
+      margin-bottom: 16px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: rgba(243, 247, 241, .74);
+    }
+
+    /* Hide floating orbs for clean look */
+    .laptop-section .floating-orb {
+      display: none;
+    }
+
+    /* Fun section title styles */
+    .laptop-section .sec-title-fun {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: clamp(52px, 10vw, 128px);
+      line-height: .98;
+      letter-spacing: -.03em;
+      text-align: center;
+      margin-bottom: 14px;
+      color: #f7faf6;
+      position: relative;
+      z-index: 2;
+      text-wrap: balance;
+      text-shadow: 0 6px 20px rgba(0, 0, 0, .18);
+      transform: translateZ(0);
+    }
+
+    .laptop-section .sec-sub-fun {
+      font-size: 15px;
+      color: rgba(243, 247, 241, .8);
+      text-align: center;
+      max-width: 520px;
+      margin: 0 auto;
+      line-height: 1.85;
+      position: relative;
+      z-index: 2;
+      opacity: calc(1 - (var(--future-progress) * 0.28));
+    }
+
+    /* Emoji sparkles around title */
+    .sparkle-wrap {
+      position: relative;
+      display: inline-block;
+    }
+
+    .sparkle {
+      position: absolute;
+      font-size: 18px;
+      animation: sparkleFloat 3s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .sparkle-1 {
+      top: -10px;
+      left: -30px;
+      animation-delay: 0s;
+    }
+
+    .sparkle-2 {
+      top: -8px;
+      right: -30px;
+      animation-delay: 1s;
+    }
+
+    .sparkle-3 {
+      bottom: -5px;
+      left: 30%;
+      animation-delay: 0.5s;
+    }
+
+    .sparkle-4 {
+      top: 50%;
+      right: -45px;
+      animation-delay: 1.5s;
+    }
+
+    .sparkle-5 {
+      top: 50%;
+      left: -45px;
+      animation-delay: 2s;
+    }
+
+    @keyframes sparkleFloat {
+
+      0%,
+      100% {
+        transform: translateY(0) scale(1) rotate(0deg);
+        opacity: .7;
+      }
+
+      50% {
+        transform: translateY(-8px) scale(1.2) rotate(15deg);
+        opacity: 1;
+      }
+    }
+
+    .laptop-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: perspective(1400px) rotateX(22deg) translateY(160px) scale(0.85);
+      transition: opacity 2.4s var(--ease-out), transform 3s var(--ease-out);
+      cursor: pointer;
+      transform-style: preserve-3d;
+    }
+
+    .laptop-wrap.in-view {
+      opacity: 1;
+      transform: perspective(1400px) rotateX(0deg) translateY(0) scale(1);
+    }
+
+    @media (max-width: 480px) {
+      .laptop-section {
+        padding: 0 16px;
+        min-height: calc(100vh - 56px);
+      }
+
+      .future-stage {
+        min-height: calc(100vh - 56px);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .pricing-section {
+        margin-top: calc(-1 * min(14vh, 88px));
+        padding-top: calc(40px + min(4vh, 28px));
+      }
+
+      .future-stage-content {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+
+      .laptop-section .sec-sub-fun {
+        opacity: 1;
+      }
+    }
+
+    .lc-wrap {
+      display: flex;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 16/10;
+      max-width: 900px;
+      margin: 0 auto;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      background-clip: padding-box;
+      font-size: clamp(9px, 1.2vw, 14px);
+      position: relative;
+      box-shadow:
+        0 24px 48px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(168, 85, 247, .15),
+        0 0 60px rgba(56, 189, 248, .1);
+      animation: laptopGlow 4s ease-in-out infinite alternate;
+    }
+
+    .lc-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #a855f7, #fb923c, #38bdf8, #a7e169, #fb7185, #a855f7);
+      background-size: 400% 400%;
+      animation: rainbowBorder 6s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes rainbowBorder {
+      0% {
+        background-position: 0% 50%;
+      }
+
+      50% {
+        background-position: 100% 50%;
+      }
+
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    @keyframes laptopGlow {
+      0% {
+        box-shadow:
+          0 24px 48px rgba(0, 0, 0, 0.4),
+          0 0 20px rgba(168, 85, 247, .12),
+          0 0 40px rgba(56, 189, 248, .08);
+      }
+
+      50% {
+        box-shadow:
+          0 24px 48px rgba(0, 0, 0, 0.4),
+          0 0 30px rgba(251, 146, 60, .15),
+          0 0 60px rgba(167, 225, 105, .12);
+      }
+
+      100% {
+        box-shadow:
+          0 24px 48px rgba(0, 0, 0, 0.4),
+          0 0 25px rgba(251, 113, 133, .12),
+          0 0 50px rgba(168, 85, 247, .1);
+      }
+    }
+
+    [data-theme="light"] .lc-wrap {
+      box-shadow:
+        0 24px 48px rgba(0, 0, 0, 0.12),
+        0 0 20px rgba(168, 85, 247, .08),
+        0 0 40px rgba(56, 189, 248, .06);
+    }
+
+    /* Sidebar */
+    .lc-sidebar {
+      width: 22%;
+      min-width: 22%;
+      background: #04241c;
+      border-right: 1px solid rgba(255, 255, 255, .07);
+      display: flex;
+      flex-direction: column;
+      padding: 1.2em 1em;
+      gap: .5em;
+      overflow: hidden;
+    }
+
+    [data-theme="light"] .lc-sidebar {
+      background: #eeeadd;
+      border-right: 1px solid rgba(0, 0, 0, .08);
+    }
+
+    .lc-sidebar-top {
+      padding-bottom: .6em;
+    }
+
+    .lc-new-chat {
+      display: flex;
+      align-items: center;
+      gap: .5em;
+      background: #daff99;
+      color: #052d23;
+      border-radius: 7px;
+      padding: .55em .8em;
+      font-weight: 600;
+      font-size: .95em;
+      cursor: pointer;
+    }
+
+    .lc-sidebar-label {
+      font-size: .72em;
+      font-weight: 700;
+      color: #5c5c50;
+      letter-spacing: .07em;
+      margin-top: .4em;
+    }
+
+    .lc-model-pill {
+      display: flex;
+      align-items: center;
+      gap: .5em;
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .07);
+      border-radius: 6px;
+      padding: .45em .7em;
+      font-size: .88em;
+      color: #f4f4f4;
+    }
+
+    [data-theme="light"] .lc-model-pill {
+      background: rgba(0, 0, 0, .05);
+      border-color: rgba(0, 0, 0, .07);
+      color: #1b1c18;
+    }
+
+    .lc-model-dot {
+      width: .6em;
+      height: .6em;
+      border-radius: 50%;
+      background: #daff99;
+      flex-shrink: 0;
+    }
+
+    .lc-history-item {
+      font-size: .82em;
+      color: #5c5c50;
+      padding: .35em .4em;
+      border-radius: 5px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      cursor: pointer;
+      transition: background .15s, color .15s;
+    }
+
+    .lc-history-item:hover {
+      background: rgba(255, 255, 255, .05);
+      color: #f4f4f4;
+    }
+
+    [data-theme="light"] .lc-history-item {
+      color: #9b9c98;
+    }
+
+    /* Main */
+    .lc-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: #052d23;
+      overflow: hidden;
+    }
+
+    [data-theme="light"] .lc-main {
+      background: #f4f3eb;
+    }
+
+    .lc-topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: .9em 1.2em;
+      border-bottom: 1px solid rgba(255, 255, 255, .06);
+    }
+
+    [data-theme="light"] .lc-topbar {
+      border-bottom-color: rgba(0, 0, 0, .07);
+    }
+
+    .lc-chat-title {
+      font-size: .95em;
+      font-weight: 500;
+      color: #f4f4f4;
+    }
+
+    [data-theme="light"] .lc-chat-title {
+      color: #1b1c18;
+    }
+
+    .lc-topbar-icons {
+      display: flex;
+      gap: .8em;
+      color: #5c5c50;
+    }
+
+    .lc-messages {
+      flex: 1;
+      overflow: hidden;
+      padding: 1em 1.2em;
+      display: flex;
+      flex-direction: column;
+      gap: .9em;
+      justify-content: flex-end;
+    }
+
+    /* Message bubbles */
+    .lc-msg {
+      display: flex;
+      gap: .6em;
+      align-items: flex-start;
+      opacity: 0;
+      animation: lcFadeUp .4s ease forwards;
+    }
+
+    .lc-msg.user {
+      flex-direction: row-reverse;
+    }
+
+    @keyframes lcFadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .lc-avatar {
+      width: 1.8em;
+      height: 1.8em;
+      border-radius: 6px;
+      background: rgba(218, 255, 153, .15);
+      border: 1px solid rgba(218, 255, 153, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: .8em;
+      font-weight: 700;
+      color: #daff99;
+    }
+
+    .lc-avatar.user-av {
+      background: #daff99;
+      color: #052d23;
+    }
+
+    .lc-bubble {
+      max-width: 75%;
+      font-size: .9em;
+      line-height: 1.55;
+      color: #f4f4f4;
+    }
+
+    [data-theme="light"] .lc-bubble {
+      color: #1b1c18;
+    }
+
+    .lc-msg.user .lc-bubble {
+      background: rgba(255, 255, 255, .07);
+      border: 1px solid rgba(255, 255, 255, .09);
+      border-radius: 10px 10px 3px 10px;
+      padding: .5em .85em;
+    }
+
+    [data-theme="light"] .lc-msg.user .lc-bubble {
+      background: rgba(0, 0, 0, .06);
+      border-color: rgba(0, 0, 0, .08);
+      color: #1b1c18;
+    }
+
+    /* Typing indicator */
+    .lc-typing {
+      display: flex;
+      align-items: center;
+      gap: .35em;
+      padding: .4em 0;
+    }
+
+    .lc-typing span {
+      width: .45em;
+      height: .45em;
+      border-radius: 50%;
+      background: #daff99;
+      display: inline-block;
+      animation: lcDot 1.2s infinite;
+    }
+
+    .lc-typing span:nth-child(2) {
+      animation-delay: .2s;
+    }
+
+    .lc-typing span:nth-child(3) {
+      animation-delay: .4s;
+    }
+
+    @keyframes lcDot {
+
+      0%,
+      60%,
+      100% {
+        opacity: .25;
+        transform: translateY(0);
+      }
+
+      30% {
+        opacity: 1;
+        transform: translateY(-.3em);
+      }
+    }
+
+    /* Input area */
+    .lc-input-area {
+      padding: .6em 1.2em 1em;
+      display: flex;
+      flex-direction: column;
+      gap: .4em;
+    }
+
+    .lc-counter {
+      font-size: .72em;
+      color: #3c3c33;
+    }
+
+    .lc-input-box {
+      background: rgba(255, 255, 255, .06);
+      border: 1px solid rgba(255, 255, 255, .1);
+      border-radius: 9px;
+      padding: .6em .9em;
+      display: flex;
+      align-items: center;
+      min-height: 2.6em;
+      position: relative;
+    }
+
+    [data-theme="light"] .lc-input-box {
+      background: #fff;
+      border-color: rgba(0, 0, 0, .12);
+    }
+
+    .lc-input-text {
+      font-size: .88em;
+      color: #f4f4f4;
+      flex: 1;
+    }
+
+    [data-theme="light"] .lc-input-text {
+      color: #1b1c18;
+    }
+
+    .lc-cursor {
+      color: #daff99;
+      font-weight: 300;
+      font-size: 1em;
+      animation: lcBlink .75s step-end infinite;
+    }
+
+    .lc-bubble-typing::after {
+      content: '|';
+      color: #daff99;
+      animation: lcBlink .75s step-end infinite;
+      margin-left: 1px;
+    }
+
+    @keyframes lcBlink {
+
+      0%,
+      100% {
+        opacity: 1
+      }
+
+      50% {
+        opacity: 0
+      }
+    }
+
+    .lc-send-btn {
+      width: 1.9em;
+      height: 1.9em;
+      border-radius: 6px;
+      background: #daff99;
+      color: #052d23;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-left: .5em;
+      transition: background .2s;
+    }
+
+    .lc-send-btn:hover {
+      background: #b8e673;
+    }
+
+    .lc-send-btn.hidden {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .lc-model-tag {
+      display: flex;
+      align-items: center;
+      gap: .3em;
+      font-size: .72em;
+      color: #3c3c33;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- NAV -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html">
+        <img src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774451883/ADO_AI-01_or74hj.png" alt="ART de ONE"
+          class="nav-logo" data-theme-logo>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="#" onclick="goToChat(event)">Try Now</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <button class="theme-btn" id="themeBtn" aria-label="Toggle theme">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <circle cx="12" cy="12" r="5" />
+            <line x1="12" y1="1" x2="12" y2="3" />
+            <line x1="12" y1="21" x2="12" y2="23" />
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+            <line x1="1" y1="12" x2="3" y2="12" />
+            <line x1="21" y1="12" x2="23" y2="12" />
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+          </svg>
+        </button>
+        <div class="hidden md:flex items-center gap-3" id="desktopAuth"
+          style="display: flex; align-items: center; gap: 12px;">
+          <a href="login.html" class="nav-signin" id="btnLoginDesktop"
+            style="background: transparent; border: 1px solid var(--border); color: var(--text);">
+            Sign in
+          </a>
+          <a href="register.html" class="nav-signin" id="btnSignupDesktop">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+            Sign up
+          </a>
+          <div id="userInfoDesktop" style="display:none;">
+            <div class="nav-profile">
+              <button class="nav-profile-btn" id="navProfileBtn" aria-label="Profile menu">
+                <span class="nav-profile-initial" id="avatarDesktop">U</span>
+              </button>
+              <div class="nav-profile-menu" id="navProfileMenu">
+                <a href="ado-ai.html">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                  </svg>
+                  ADO AI
+                </a>
+                <button onclick="logout()" class="profile-signout">
+                  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                    <polyline points="16 17 21 12 16 7" />
+                    <line x1="21" y1="12" x2="9" y2="12" />
+                  </svg>
+                  Sign Out
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="nav-mobile-btn" id="mobileMenuBtn" aria-label="Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round">
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" class="active">Home</a>
+    <a href="#pricing">Pricing</a>
+    <a href="blog.html">Blog</a>
+    <a href="#" onclick="goToChat(event)">Try Now</a>
+    <div id="mobileAuth">
+      <div style="display: flex; gap: 8px; margin-top: 8px;">
+        <a href="login.html" class="nav-btn-signout"
+          style="flex: 1; justify-content: center; padding:0.3rem 0.75rem; font-size:0.75rem; gap:0.35rem; background: transparent; color: var(--text); font-weight: 600; border-radius: 2rem; border: 1px solid var(--border); display: inline-flex; align-items: center; text-decoration: none;"
+          id="btnLoginMobile">Sign in</a>
+        <a href="register.html" class="nav-btn-signout"
+          style="flex: 1; justify-content: center; padding:0.3rem 0.75rem; font-size:0.75rem; gap:0.35rem; background: var(--accent); color: #0d1a00; font-weight: 600; border-radius: 2rem; border: 1px solid var(--accent); display: inline-flex; align-items: center; text-decoration: none;"
+          id="btnSignupMobile"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>Sign up</a>
+      </div>
+      <div id="userInfoMobile" style="display:none; margin-top: 8px;">
+        <a href="ado-ai.html"
+          style="text-decoration:none; display: flex; align-items: center; gap: 10px; padding: 10px 0;">
+          <span id="avatarMobile"
+            style="width: 32px; height: 32px; border-radius: 50%; background: var(--surface); border: 2px solid var(--border); display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; overflow: hidden; color: var(--accent);"></span>
+          <span style="padding:0; color: var(--text); font-weight: 500; font-size: 15px;">ADO AI</span>
+        </a>
+        <button onclick="logout()"
+          style="width:100%; margin-top:4px; margin-bottom:8px; font-size:0.8rem; padding:0.5rem 1rem; background: #ed2939; color: #fff; font-weight: 600; border-radius: 2rem; border: 1px solid #ed2939; cursor: pointer;">Sign
+          out</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- HERO -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="hero">
+    <video class="hero-video-bg" data-autoplay-video autoplay muted loop playsinline webkit-playsinline preload="auto">
+      <source src="https://res.cloudinary.com/dy7vubtji/video/upload/v1774454152/flower_compressed_rlfb88.mp4"
+        type="video/mp4">
+    </video>
+    <div class="hero-inner fade-up">
+
+      <h1 class="hero-title" aria-label="One Platform, Every AI Model">
+        <span class="hero-title-row">
+          <span class="hero-title-word" style="--word-delay:0.02s"><span>One</span></span>
+          <span class="hero-title-word" style="--word-delay:0.1s"><span>Platform,</span></span>
+        </span>
+        <span class="hero-title-row">
+          <span class="hero-title-word" style="--word-delay:0.28s"><em>Every AI model</em></span>
+        </span>
+      </h1>
+
+      <p class="hero-sub">GPT-5.4, Claude Sonnet, Claude Opus ကို plan တစ်ခုတည်းနဲ့ ရွေးချယ်သုံးနိုင်ပါသည်။</p>
+
+      <div class="hero-actions">
+        <a href="#" onclick="goToSignup(event)" class="btn btn-primary">အခမဲ့ စတင်သုံးမည်</a>
+        <a href="#pricing" class="btn btn-ghost">Plans ကြည့်မည် ↓</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- MODELS -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="section section-alt models-section">
+    <div class="container">
+      <h2 class="sec-title fade-up">AI <span class="title-serif">Models</span></h2>
+      <p class="sec-sub fade-up delay-100">Plan ပေါ်မူတည်ပြီး world-class AI models များကို ရွေးချယ်သုံးနိုင်ပါသည်</p>
+
+      <div class="marquee-wrap fade-up delay-200">
+        <div class="marquee-content">
+          <!-- Set 1 -->
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT-5.4"
+              class="gpt-logo">
+            <span>GPT-5.4</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png"
+              alt="Claude Opus">
+            <span>Claude Opus 4.6</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/meta-llama_kmvmzm.png"
+              alt="Llama 3.3">
+            <span>Llama 3.3 70B</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="o3"
+              class="gpt-logo">
+            <span>o3</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png"
+              alt="Claude Sonnet">
+            <span>Claude Sonnet 4.6</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/qwen_c1be68.png" alt="Qwen">
+            <span>Qwen 32B</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/groq_i6k8ot.png" alt="Groq">
+            <span>Scout 17B</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png"
+              alt="Claude Haiku">
+            <span>Claude Haiku 4.5</span>
+          </div>
+
+          <!-- Set 2 (Duplicate for seamless loop) -->
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT-5.4"
+              class="gpt-logo">
+            <span>GPT-5.4</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png"
+              alt="Claude Opus">
+            <span>Claude Opus 4.6</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/meta-llama_kmvmzm.png"
+              alt="Llama 3.3">
+            <span>Llama 3.3 70B</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="o3"
+              class="gpt-logo">
+            <span>o3</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png"
+              alt="Claude Sonnet">
+            <span>Claude Sonnet 4.6</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/qwen_c1be68.png" alt="Qwen">
+            <span>Qwen 32B</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/groq_i6k8ot.png" alt="Groq">
+            <span>Scout 17B</span>
+          </div>
+          <div class="model-badge">
+            <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png"
+              alt="Claude Haiku">
+            <span>Claude Haiku 4.5</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <div style="position: relative;">
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- LAPTOP MOCKUP -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <section class="laptop-section">
+      <video class="future-video-bg" data-autoplay-video autoplay muted loop playsinline webkit-playsinline
+        preload="auto">
+        <source src="https://res.cloudinary.com/dy7vubtji/video/upload/v1774454154/DNA_epdxf4.mp4" type="video/mp4">
+      </video>
+
+      <div class="container future-stage">
+        <div class="future-stage-content">
+          <span class="future-kicker">ADO AI</span>
+          <h2 class="sec-title-fun">
+            Experience the <span class="title-serif">Future</span>
+          </h2>
+          <p class="sec-sub-fun">One clean platform for premium AI, crafted for faster thinking and smoother work.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- PRICING -->
+    <!-- ═════════════════════════════════════════════════════════════ -->
+    <section class="section pricing-section" id="pricing">
+      <div class="container">
+        <h2 class="sec-title fade-up">Plans & <span class="title-serif">Pricing</span></h2>
+        <p class="sec-sub fade-up delay-100">သင့်လိုအပ်ချက်နှင့် ကိုက်ညီမည့် plan ကို ရွေးချယ်ပါ</p>
+
+        <div class="pricing-grid">
+
+          <!-- ── FREE ── -->
+          <div class="plan-card fade-up delay-100" data-plan-card="free"
+            style="--pc-bg:#d8b4fe; --pc-text:#000000; --pc-btn-text:#ffffff; --pc-border-color:#d8b4fe; --pc-glow:rgba(216,180,254,.4);">
+
+            <div class="plan-top-box">
+              <img src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271330/freeplan-cutebird_szerxx.svg"
+                alt="Free Mascot" class="plan-mascot">
+              <a href="ado-ai.html" class="plan-btn-new">အခမဲ့ စတင်အသုံးပြုမည်</a>
+            </div>
+
+            <div class="plan-name-new">Free</div>
+            <div class="plan-price"><span data-plan-price-value="free">0</span><sup>ks</sup></div>
+            <div class="plan-price-unit-new" data-plan-price-unit="free">/ month · Capped free access</div>
+
+            <hr class="plan-divider">
+
+            <div class="plan-models-title-new">Included Models</div>
+            <div class="plan-models-chips" style="margin-bottom: 16px;">
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/meta-llama_kmvmzm.png"
+                  alt="Llama">
+                <span>Llama 3.3 70B</span>
+              </div>
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/qwen_c1be68.png" alt="Qwen">
+                <span>Qwen 32B</span>
+              </div>
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/groq_i6k8ot.png" alt="Groq">
+                <span>Scout 17B</span>
+              </div>
+            </div>
+
+            <hr class="plan-divider">
+
+            <ul class="plan-features-new">
+              <li><span data-plan-daily-label>30 messages / day</span></li>
+              <li>Groq inference speed</li>
+              <li>Chat history saved</li>
+              <li class="disabled">Premium models</li>
+            </ul>
+          </div>
+
+          <!-- ── STARTER ── -->
+          <div class="plan-card fade-up delay-200" data-plan-card="student"
+            style="--pc-bg:#bbf7d0; --pc-text:#000000; --pc-btn-text:#ffffff; --pc-border-color:#bbf7d0; --pc-glow:rgba(187,247,208,.4);">
+
+            <div class="plan-top-box">
+              <img src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271901/studentplan-cuteowl_khwy4k.svg"
+                alt="Student Mascot" class="plan-mascot">
+              <button class="plan-btn-new" onclick="handlePlanAction('student')">Student ယူမည်</button>
+            </div>
+
+            <div class="plan-name-new">Student</div>
+            <div class="plan-price"><span data-plan-price-value="student">6,000</span><sup>ks</sup></div>
+            <div class="plan-price-unit-new" data-plan-price-unit="student">/ month · ~8.8 ks / msg cap</div>
+
+            <hr class="plan-divider">
+
+            <div class="plan-models-title-new">Included Models</div>
+            <div class="plan-models-chips" style="margin-bottom: 16px;">
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT"
+                  class="gpt-logo">
+                <span>GPT-5.4-nano</span>
+              </div>
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT"
+                  class="gpt-logo">
+                <span>GPT-5-nano</span>
+              </div>
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/meta-llama_kmvmzm.png"
+                  alt="Llama">
+                <span>Llama 3.3 70B</span>
+              </div>
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/qwen_c1be68.png" alt="Qwen">
+                <span>Qwen 32B</span>
+              </div>
+            </div>
+
+            <hr class="plan-divider">
+
+            <ul class="plan-features-new">
+              <li><span data-plan-daily-label>30 messages / day</span></li>
+              <li>GPT-5.4-nano (Ultra fast)</li>
+              <li>+ All Free tier models</li>
+              <li><span data-plan-msg-cost="student">~8.8 ks / message cap</span></li>
+            </ul>
+          </div>
+
+          <!-- ── PRO (Popular) ── -->
+          <div class="plan-card popular relative fade-up delay-300" data-plan-card="pro"
+            style="--pc-bg:#fef08a; --pc-text:#000000; --pc-btn-text:#ffffff; --pc-border-color:#fef08a; --pc-glow:rgba(254,240,138,.4);">
+            <div class="popular-badge" style="background:#000; color:#fff;">⭐ လူကြိုက်အများဆုံး</div>
+
+            <div class="plan-top-box" style="margin-top: 12px;">
+              <img src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271901/pro-cutedog_n0mjkq.svg"
+                alt="Pro Mascot" class="plan-mascot">
+              <button class="plan-btn-new" onclick="handlePlanAction('pro')">Pro ယူမည်</button>
+            </div>
+
+            <div class="plan-name-new">Pro</div>
+            <div class="plan-price"><span data-plan-price-value="pro">20,000</span><sup>ks</sup></div>
+            <div class="plan-price-unit-new" data-plan-price-unit="pro">/ month · ~83.3 ks / msg cap</div>
+
+            <hr class="plan-divider">
+
+            <div class="plan-models-title-new">Included Models</div>
+            <div class="plan-models-chips" style="margin-bottom: 16px;">
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png" alt="Claude">
+                <span>Claude Haiku 3</span>
+              </div>
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT"
+                  class="gpt-logo">
+                <span>GPT-4.1-nano</span>
+              </div>
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT"
+                  class="gpt-logo">
+                <span>GPT-4o</span>
+              </div>
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png" alt="Claude">
+                <span>Claude Haiku 4.5</span>
+              </div>
+            </div>
+
+            <hr class="plan-divider">
+
+            <ul class="plan-features-new">
+              <li><span data-plan-daily-label>8 messages / day</span></li>
+              <li>GPT-4o (Smart & fast)</li>
+              <li>Claude Haiku 4.5 access</li>
+              <li>+ All lower tier models</li>
+            </ul>
+          </div>
+
+        </div><!-- /pricing-grid top -->
+
+        <div class="pricing-grid-bottom">
+
+          <!-- ── PREMIUM ── -->
+          <div class="plan-card fade-up delay-100" data-plan-card="premium"
+            style="--pc-bg:#bfdbfe; --pc-text:#000000; --pc-btn-text:#ffffff; --pc-border-color:#bfdbfe; --pc-glow:rgba(191,219,254,.4);">
+
+            <div class="plan-top-box">
+              <img src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271901/premium-cutebear_dxm7kq.svg"
+                alt="Premium Mascot" class="plan-mascot">
+              <button class="plan-btn-new" onclick="handlePlanAction('premium')">Premium ယူမည်</button>
+            </div>
+
+            <div class="plan-name-new">Premium</div>
+            <div class="plan-price"><span data-plan-price-value="premium">40,000</span><sup>ks</sup></div>
+            <div class="plan-price-unit-new" data-plan-price-unit="premium">/ month · ~111.1 ks / msg cap</div>
+
+            <hr class="plan-divider">
+
+            <div class="plan-models-title-new">Included Models</div>
+            <div class="plan-models-chips" style="margin-bottom: 16px;">
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT"
+                  class="gpt-logo">
+                <span>GPT-5.4-mini</span>
+              </div>
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT"
+                  class="gpt-logo">
+                <span>GPT-5.4</span>
+              </div>
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png" alt="Claude">
+                <span>Claude Sonnet 4.5</span>
+              </div>
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png" alt="Claude">
+                <span>Claude Sonnet 4.6</span>
+              </div>
+            </div>
+
+            <hr class="plan-divider">
+
+            <ul class="plan-features-new">
+              <li><span data-plan-daily-label>12 messages / day</span></li>
+              <li>GPT-5.4 (Flagship)</li>
+              <li>o3-mini (Reasoning)</li>
+              <li>+ All lower tier models</li>
+            </ul>
+          </div>
+
+          <!-- ── ULTRA ── -->
+          <div class="plan-card fade-up delay-200" data-plan-card="ultra"
+            style="--pc-bg:#fed7aa; --pc-text:#000000; --pc-btn-text:#ffffff; --pc-border-color:#fed7aa; --pc-glow:rgba(254,215,170,.4);">
+
+            <div class="plan-top-box">
+              <img src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271901/ultra-cutelion_bga9vv.svg"
+                alt="Ultra Mascot" class="plan-mascot">
+              <button class="plan-btn-new" onclick="handlePlanAction('ultra')">Ultra ယူမည်</button>
+            </div>
+
+            <div class="plan-name-new">Ultra</div>
+            <div class="plan-price"><span data-plan-price-value="ultra">150,000</span><sup>ks</sup></div>
+            <div class="plan-price-unit-new" data-plan-price-unit="ultra">/ month · ~1,250 ks / msg cap</div>
+
+            <hr class="plan-divider">
+
+            <div class="plan-models-title-new">Included Models</div>
+            <div class="plan-models-chips" style="margin-bottom: 16px;">
+              <div class="plan-model-chip">
+                <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png" alt="Claude">
+                <span>Claude Opus 4.6</span>
+              </div>
+            </div>
+
+            <hr class="plan-divider">
+
+            <ul class="plan-features-new">
+              <li><span data-plan-daily-label>4 messages / day</span></li>
+              <li>Claude Opus 4.6 (Most powerful)</li>
+              <li>Highest reasoning quality</li>
+              <li>+ All lower tier models</li>
+            </ul>
+          </div>
+
+        </div><!-- /pricing-grid-bottom -->
+      </div>
+    </section>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- COMPARISON TABLE -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="sec-title fade-up">Plan <span class="title-serif">Comparison</span></h2>
+      <p class="sec-sub fade-up delay-100">Feature တစ်ခုချင်းကို plan အလိုက် နှိုင်းယှဉ်ကြည့်ပါ</p>
+
+      <div class="comp-wrap fade-up delay-200">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th style="text-align:left;">Feature</th>
+              <th>
+                <div class="comp-plan-header"><img
+                    src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271330/freeplan-cutebird_szerxx.svg"
+                    alt="Free">Free</div>
+              </th>
+              <th>
+                <div class="comp-plan-header"><img
+                    src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271901/studentplan-cuteowl_khwy4k.svg"
+                    alt="Student">Student</div>
+              </th>
+              <th class="highlight">
+                <div class="comp-plan-header"><img
+                    src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271901/pro-cutedog_n0mjkq.svg"
+                    alt="Pro">Pro</div>
+              </th>
+              <th>
+                <div class="comp-plan-header"><img
+                    src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271901/premium-cutebear_dxm7kq.svg"
+                    alt="Premium">Premium</div>
+              </th>
+              <th>
+                <div class="comp-plan-header"><img
+                    src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271901/ultra-cutelion_bga9vv.svg"
+                    alt="Ultra">Ultra</div>
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>စျေးနှုန်း / လ</td>
+              <td><span data-comp-price="free">0 ks</span></td>
+              <td><span data-comp-price="student">6,000 ks</span></td>
+              <td><strong data-comp-price="pro">20,000 ks</strong></td>
+              <td><span data-comp-price="premium">40,000 ks</span></td>
+              <td><span data-comp-price="ultra">150,000 ks</span></td>
+            </tr>
+            <tr>
+              <td>Messages / Day</td>
+              <td><span data-comp-daily="free">30</span></td>
+              <td><span data-comp-daily="student">30</span></td>
+              <td><strong data-comp-daily="pro">8</strong></td>
+              <td><span data-comp-daily="premium">12</span></td>
+              <td><span data-comp-daily="ultra">4</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/meta-llama_kmvmzm.png"
+                    alt="Llama">Llama 3.3 70B</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/qwen_c1be68.png" alt="Qwen">Qwen
+                  32B</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/groq_i6k8ot.png" alt="Groq">Scout
+                  17B</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT"
+                    class="gpt-logo">GPT-5.4-nano</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT"
+                    class="gpt-logo">GPT-5-nano</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png"
+                    alt="Claude">Claude Haiku 3</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT"
+                    class="gpt-logo">GPT-4.1-nano</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT"
+                    class="gpt-logo">GPT-4o</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png"
+                    alt="Claude">Claude Haiku 4.5</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT"
+                    class="gpt-logo">GPT-5.4-mini</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT"
+                    class="gpt-logo">GPT-5.4</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png"
+                    alt="Claude">Claude Sonnet 4.5</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png"
+                    alt="Claude">Claude Sonnet 4.6</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td><span class="comp-model-label"><img
+                    src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png"
+                    alt="Claude">Claude Opus 4.6</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-x">✕</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+            <tr>
+              <td>Chat History</td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+              <td><span class="comp-check">✓</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- AI STRENGTHS -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="section strengths-section">
+    <div class="container">
+      <h2 class="sec-title fade-up">ဘယ် AI က ဘာအတွက် အကောင်းဆုံးလဲ?</h2>
+      <p class="sec-sub fade-up delay-100">ကိုယ့်လိုအပ်ချက်နဲ့ အကိုက်ညီဆုံး Model ကို ရွေးချယ်နိုင်ဖို့</p>
+
+      <div class="strengths-grid">
+
+        <!-- Claude -->
+        <div class="strength-card fade-up delay-100" style="--sc-accent:#fb923c;">
+          <div class="strength-top">
+            <div class="strength-icon" style="background:rgba(251,146,60,.12);">
+              <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/claude_fmyzwe.png" alt="Claude">
+            </div>
+            <span class="strength-label" style="background:rgba(251,146,60,.12); color:#fb923c;">Coding & Logic</span>
+          </div>
+          <h3 class="strength-title">Code ရေးတာ၊ Logic ပိုင်းမှာ ဆရာကြီးပါ</h3>
+          <p class="strength-desc">Programming code ရေးချင်တာ၊ bug ရှာတာ၊ data ခွဲစိတ်တာမျိုးဆို Claude ကို ယုံကြည်စွာ
+            အပ်လိုက်ပါ။ အဖြေတွေက တိတိကျကျ၊ လိုရင်းကို တန်းရောက်ပါတယ်။</p>
+        </div>
+
+        <!-- GPT -->
+        <div class="strength-card fade-up delay-200" style="--sc-accent:#22c55e;">
+          <div class="strength-top">
+            <div class="strength-icon" style="background:rgba(34,197,94,.12);">
+              <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/gpt_oblzbe.png" alt="GPT"
+                class="gpt-logo">
+            </div>
+            <span class="strength-label" style="background:rgba(34,197,94,.12); color:#22c55e;">Creative Writing</span>
+          </div>
+          <h3 class="strength-title">စာရေးတာ၊ Content ဖန်တီးတာမှာ နံပါတ်တစ်ပါ</h3>
+          <p class="strength-desc">Blog post ရေးတာ၊ email draft ဆွဲတာ၊ ဘာသာပြန်တာမျိုးဆို GPT က လူရေးထားသလို သဘာဝကျကျ
+            ရေးပေးနိုင်ပါတယ်။ စာရှည်တွေကို အနှစ်ချုပ်တာမှာလည်း ဆရာကြီးပါပဲ။</p>
+        </div>
+
+        <!-- Llama -->
+        <div class="strength-card fade-up delay-100" style="--sc-accent:#a855f7;">
+          <div class="strength-top">
+            <div class="strength-icon" style="background:rgba(168,85,247,.12);">
+              <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/meta-llama_kmvmzm.png"
+                alt="Llama">
+            </div>
+            <span class="strength-label" style="background:rgba(168,85,247,.12); color:#a855f7;">Fast & Free</span>
+          </div>
+          <h3 class="strength-title">မြန်ဆန်ပြီး နေ့စဉ်သုံးဖို့ အဆင်ပြေဆုံး</h3>
+          <p class="strength-desc">ဘာမေးမေး ချက်ချင်းအဖြေရတယ်။ Groq နဲ့ တွဲထားလို့ speed က မျက်တောင်တစ်ခတ်အတွင်းပါပဲ။
+            Free plan မှာ အကန့်အသတ်မဲ့ သုံးလို့ရပါတယ်။</p>
+        </div>
+
+        <!-- Qwen -->
+        <div class="strength-card fade-up delay-200" style="--sc-accent:#6366f1;">
+          <div class="strength-top">
+            <div class="strength-icon" style="background:rgba(99,102,241,.12);">
+              <img src="https://res.cloudinary.com/ddkd9lxpr/image/upload/v1773839567/qwen_c1be68.png" alt="Qwen">
+            </div>
+            <span class="strength-label" style="background:rgba(99,102,241,.12); color:#6366f1;">Multilingual</span>
+          </div>
+          <h3 class="strength-title">ဘာသာစကားစုံ နားလည်နိုင်စွမ်း အမြင့်ဆုံး</h3>
+          <p class="strength-desc">အာရှဘာသာစကားတွေ အပါအဝင် ဘာသာစကားမျိုးစုံကို ကောင်းကောင်း နားလည်ပါတယ်။ ပေါ့ပါးပြီး
+            မြန်ဆန်တဲ့ Model လေးတစ်ခုပါ။</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- FAQ -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="section faq-section">
+    <div class="container-narrow">
+      <h2 class="sec-title fade-up">မေးလေ့ရှိသောမေးခွန်းများ</h2>
+      <p class="sec-sub fade-up delay-100">Plans နှင့် ပတ်သက်သော အမေးများဆုံးမေးခွန်းများ</p>
+
+      <div class="fade-up delay-200">
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            Free plan နဲ့ ဘာတွေ လုပ်နိုင်သလဲ?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Free plan မှာ Llama 3.3 70B, Qwen 32B, Scout 17B models များကို တစ်ရက်လျှင် 30 messages အထိ
+              အသုံးပြုနိုင်ပါသည်။ Groq infrastructure ပေါ်တွင် run ထားသောကြောင့် response speed လည်း မြန်ဆန်ပါသည်။</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            Daily message limit ကုန်ရင် ဘာဖြစ်မလဲ?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Premium model messages ကုန်သွားပါက Free tier models (Llama, Qwen) များကို ဆက်သုံးနိုင်ပါသည်။ Message
+              limit က နေ့တိုင်း reset ဖြစ်ပါသည်။</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            Plan ပြောင်းချင်ရင် ဘယ်လိုလုပ်ရမလဲ?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>Plan ကို အချိန်မရွေး upgrade သို့မဟုတ် downgrade လုပ်နိုင်ပါသည်။ Customer dashboard မှတစ်ဆင့် plan
+              ပြောင်းနိုင်ပါသည်။</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            GPT-4.1 နဲ့ Claude Sonnet ဘယ်ဟာ ပိုကောင်းလဲ?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>GPT-4.1 က creative writing, content creation, translation အတွက် အထူးကောင်းပါသည်။ Claude Sonnet 4.6 က
+              programming, coding, complex logic နှင့် ခက်ခဲသော task များအတွက် ထူးချွန်ပါသည်။</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-btn" onclick="toggleFaq(this)">
+            ငွေပေးချေနည်းက ဘာတွေ ရှိသလဲ?
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </button>
+          <div class="faq-answer">
+            <p>KBZPay, WavePay, AYA Pay, CB Pay စသည့် mobile payment များဖြင့် ပေးချေနိုင်ပါသည်။ Bank transfer လည်း
+              လက်ခံပါသည်။</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- COMMUNITY REVIEWS -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <style>
+    .review-marquee-container {
+      margin-top: 50px;
+      overflow: hidden;
+      display: flex;
+      mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+      padding: 10px 0;
+    }
+
+    .review-track {
+      display: flex;
+      gap: 24px;
+      animation: scroll-marquee 40s linear infinite;
+      min-width: 100%;
+      flex-shrink: 0;
+      padding-right: 24px;
+    }
+
+    .review-marquee-container:hover .review-track {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll-marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+
+    .review-card {
+      width: 380px;
+      flex-shrink: 0;
+      white-space: normal;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      transition: transform .3s var(--ease-out), box-shadow .3s, border-color .3s;
+    }
+
+    .review-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }
+
+    .review-stars {
+      color: #fbbf24;
+      font-size: 16px;
+      letter-spacing: 2px;
+      display: flex;
+      gap: 2px;
+    }
+
+    .review-text {
+      font-size: 14.5px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .review-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+
+    .review-meta {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .review-name {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--text);
+    }
+
+    .review-role {
+      font-size: 12.5px;
+      color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .review-card {
+        width: 320px;
+      }
+    }
+  </style>
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="sec-title fade-up">What our <span class="title-serif">community</span> say</h2>
+      <p class="sec-sub fade-up delay-100">ADO AI ကို အသုံးပြုနေတဲ့ Customer များရဲ့ 5 Stars Reviews များ</p>
+    </div>
+
+    <div class="review-marquee-container fade-up delay-200">
+      <div class="review-track" id="reviewTrack">
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Code တွေရေးရတာ ADO AI ကြောင့် အများကြီး မြန်သွားတယ်ဗျ။ Pro Plan ကို သုံးနေတာ၊ GPT-4o က
+            Smart လည်းဖြစ်၊ Fast လည်းဖြစ်တော့ Bug တွေရှာရတာ၊ Code တွေ Debug လုပ်ရတာ အရမ်းအဆင်ပြေတယ်။ Web Developer
+            တွေအတွက် တကယ့်ကို အဆင်ပြေဆုံးပါပဲ...</p>
+          <div class="review-author">
+            <div class="review-avatar">M</div>
+            <div class="review-meta">
+              <span class="review-name">Ma Zar Zar Aung</span>
+              <span class="review-role">Web Developer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">UI/UX Idea တွေ စဉ်းစားတဲ့အခါ User Flow တွေဆွဲတဲ့အခါ ADO AI က အများကြီး အကူအညီပေးတယ်။
+            အခု Premium Plan (120,000 ks) နဲ့ Claude Sonnet 4.6 ကို သုံးပြီး Brainstorming လုပ်ရတာ အရမ်းမိုက်တယ်။
+            ဈေးနှုန်းကလည်း ပြန်ရတဲ့အရာနဲ့ယှဉ်ရင် အရမ်းတန်ပါတယ်။</p>
+          <div class="review-author">
+            <div class="review-avatar">K</div>
+            <div class="review-meta">
+              <span class="review-name">Ko Bo Bo</span>
+              <span class="review-role">UI/UX Developer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Graphic Design Concept အသစ်တွေရှာဖို့နဲ့ AI Image Generate လုပ်ဖို့ Prompt တွေရေးရာမှာ
+            ADO AI က အတော်လေး အသုံးဝင်တယ်။ ကိုယ်ကတော့ Premium Plan ယူထားတယ်။ Chat gpt Version အစုံသုံးနေရသလိုပဲ။
+            စဉ်းစားတွေးခေါ်နိုင်စွမ်းက တကယ့်ကို အဆင့်မြင့်တယ်။ အလုပ်ပိုတွင်သွားတာ အမှန်ပဲ။</p>
+          <div class="review-author">
+            <div class="review-avatar">K</div>
+            <div class="review-meta">
+              <span class="review-name">Ko Kaung Ye Myint Thu</span>
+              <span class="review-role">Senior Graphic Designer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Content Idea တွေ ပိတ်နေတဲ့အချိန်ဆို ADO AI ပဲ။ Pro Plan လေးပဲ
+            သုံးဖြစ်ပေမယ့် chatgpt နဲ့ claude က Content Script တွေ၊ Caption တွေ ရေးပေးတာ မြန်မှမြန်။ တစ်လ ၄၅,၀၀၀
+            ကျပ်ဆိုတာ Content Creator တွေအတွက် အရမ်းတန်တဲ့ ရင်းနှီးမြှုပ်နှံမှုလေးပါ။</p>
+          <div class="review-author">
+            <div class="review-avatar">M</div>
+            <div class="review-meta">
+              <span class="review-name">Ma Phuu Thwe</span>
+              <span class="review-role">Content Creator</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">စာတွေအများကြီးရေးရတဲ့ Senior Content Writer တစ်ယောက်အနေနဲ့ ADO AI ရဲ့ Ultra Plan ကို
+            သုံးဖြစ်နေပါတယ်။ Claude Opus 4.6 ဆိုတာ စျေးကြီးလို့မသုံးဖြစ်တော့ဘူးထင်တာ။ အခုမှသုံးကြည့်မိတော့ လူတစ်ယောက်
+            တကယ်ရေးထားသလို သဘာဝကျကျနဲ့ စာသားအသွားအလာ သေသပ်တာတွေ့ရတယ်။ Professional
+            ကျကျ အလုပ်လုပ်ဖို့အတွက်တော့ တကယ့်ကိုအဆင်ပြေတဲ့ plan ပါ...ကျေးဇူးပါ</p>
+          <div class="review-author">
+            <div class="review-avatar">M</div>
+            <div class="review-meta">
+              <span class="review-name">Ma Lae Lae</span>
+              <span class="review-role">Senior Content Writer</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">ထိုင်းကနေ Content တွေလုပ်နေတော့ ဘာသာစကား အခက်အခဲလေးတွေ၊ Idea အသစ်တွေအတွက် ADO AI ကိုပဲ
+            အားကိုးနေရတယ်။ Pro Plan ကိုသုံးပြီး အလုပ်တွေ အများကြီး ပိုမြန်လာတယ်။ နိုင်ငံခြားကနေ သုံးရတာလည်း အရမ်း Smooth
+            ဖြစ်တယ်။ ဈေးနှုန်းနဲ့ Plan တွေကလည်း သင့်တင့်ပါတယ်။</p>
+          <div class="review-author">
+            <div class="review-avatar">K</div>
+            <div class="review-meta">
+              <span class="review-name">Ko Aung Thu Linn</span>
+              <span class="review-role">Content Creator from Thailand</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">ဒီဘက် ထိုင်းမှာ Graphic Design အလုပ်တွေ လက်ခံလုပ်နေတော့ မြန်မာလိုရော ထိုင်းလိုပါ
+            Caption တွေ၊ Design Brief တွေရေးဖို့ ADO AI က အရမ်းအဆင်ပြေတယ်။ Student Plan လေးက ဈေးလည်းသက်သာသလို Chatgpt
+            ကိုနှစ်မျိုးတောင်သုံးလို့ရတော့ တော်တော်လေးသဘောကျမိပါတယ်ရှင့်။</p>
+          <div class="review-author">
+            <div class="review-avatar">M</div>
+            <div class="review-meta">
+              <span class="review-name">Ma Thuzar Nyein</span>
+              <span class="review-role">Graphic Designer from Thailand</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">ကျောင်းစာတွေ၊ Assignment တွေလုပ်တဲ့အခါ ADO AI က တကယ့်ကို အထောက်အကူဖြစ်တယ်။ Student Plan
+            လေးက တစ်လမှ ၁၀,၅၀၀ ကျပ်ပဲဆိုတော့ ကျောင်းသားတွေအတွက် မင်မင်တို့ထားပေးတဲ့ ဈေးနှုန်းလေးက အရမ်းအဆင်ပြေတယ်။ Free
+            Models တွေပါ သုံးလို့ရတော့ စာတွေမေးရတာ အရမ်းအဆင်ပြေပါတယ်</p>
+          <div class="review-author">
+            <div class="review-avatar">M</div>
+            <div class="review-meta">
+              <span class="review-name">Ma Kyi Lae Lae Thu</span>
+              <span class="review-role">Grade 11</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">Grade 12 အခန်းစာတွေနဲ့ Essay တွေပြင်ဆင်ဖို့ ADO AI ကို နေ့တိုင်းသုံးဖြစ်တယ်။ Student
+            Plan လေးက တစ်ရက်ကို အခေါက် ၅၀ တောင် မေးလို့ရတော့ ကျောင်းသားတွေအတွက် လုံလောက်ပါတယ်။ အဖြေပေးတာ မြန်ဆန်တဲ့အတွက်
+            အချိန်လည်း အများကြီး သက်သာတယ်။</p>
+          <div class="review-author">
+            <div class="review-avatar">K</div>
+            <div class="review-meta">
+              <span class="review-name">Ko Thura Aung Win</span>
+              <span class="review-role">Grade 12</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">တက္ကသိုလ် ပထမနှစ် Project တွေ၊ Presentation တွေလုပ်ဖို့ ADO AI က မရှိမဖြစ်ပါပဲ။ အစကတော့
+            ဘယ် Plan ယူရမလဲ စဉ်းစားနေတာ၊ လူကြိုက်များတဲ့ Student Plan လေးကို စသုံးကြည့်တာ အရမ်းအဆင်ပြေတယ်။ Qwen 32B
+            ဆိုတာ ရှိတယ်လို့တောင်တကယ်မသိတာ..ဟဲဟဲ အခုမှ သုံးကြည့်လိုက်တော့ တော်တော်လေး အဆင်ပြေတယ်ဆိုတာသိ...</p>
+          <div class="review-author">
+            <div class="review-avatar">M</div>
+            <div class="review-meta">
+              <span class="review-name">Ma Thaw Dar Aye Lwin</span>
+              <span class="review-role">First Year of University</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">ရန်ကုန်တက္ကသိုလ်ကနေ Assignment တွေ၊ Thesis တွေအတွက် ADO AI ကို သုံးနေတာပါ။ Pro Plan ကို
+            ပြောင်းသုံးကြည့်တာ Claude က စာတွေကို အမြန်ဖတ်ပြီး အနှစ်ချုပ်ပေးတာ အရမ်းမိုက်တယ်။
+            အချိန်ကုန်သက်သာလို့ တက္ကသိုလ်ကျောင်းသားတိုင်း သုံးသင့်တဲ့ AI လို့ ညွှန်းချင်ပါတယ်။</p>
+          <div class="review-author">
+            <div class="review-avatar">K</div>
+            <div class="review-meta">
+              <span class="review-name">Ko Josh</span>
+              <span class="review-role">University of Yangon</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const rTrack = document.getElementById('reviewTrack');
+      if (rTrack) {
+        const clone = rTrack.cloneNode(true);
+        clone.id = 'reviewTrackClone';
+        clone.setAttribute('aria-hidden', 'true');
+        rTrack.parentElement.appendChild(clone);
+      }
+    })();
+  </script>
+
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <!-- CTA -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <section class="section">
+    <div class="container-narrow">
+      <div class="cta-panel fade-up">
+        <div class="cta-layout">
+          <div class="cta-copy-block">
+            <span class="cta-kicker">Get Started</span>
+            <h2 class="cta-title">
+              <span class="cta-title-brand">Try <span class="cta-title-brand-mark">ADO AI</span></span>
+              <span class="cta-title-text">for Free</span>
+            </h2>
+            <p class="cta-copy">Sign in ဝင်ရောက်ပြီး Free Plan ဖြင့် အခုပဲစတင်အသုံးပြုနိုင်ပါတယ်။ <br>
+              Setup မရှုပ်ဘဲချက်ချင်းစမ်းသုံးနိုင်ပါတယ်။</p>
+          </div>
+          <div class="cta-actions-block">
+            <div class="cta-actions">
+              <a href="#" onclick="goToSignup(event)" class="btn btn-primary">ADO AI ကိုသုံးကြည့်မယ်</a>
+              <a href="login.html" class="btn btn-ghost">Sign In</a>
+            </div>
+            <div class="cta-meta" aria-hidden="true">
+              <span>Free Plan</span>
+              <span>Payment မလိုပါ</span>
+              <span>တစ်မိနစ်ပဲလိုပါတယ်</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════════════════════ -->
+  <!-- FOOTER -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <div id="footer-placeholder"></div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <!-- SCRIPTS -->
+  <!-- ═══════════════════════════════════════════════════════════════ -->
+  <script>
+    // ── Theme (matching ado-ai.html's data-theme + ado_theme key) ──
+    const moonSvg = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>`;
+    const sunSvg = `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>`;
+    const lightLogoUrl = 'https://res.cloudinary.com/dy7vubtji/image/upload/v1774451883/ADO_AI-02_lnmqny.png';
+    const darkLogoUrl = 'https://res.cloudinary.com/dy7vubtji/image/upload/v1774451883/ADO_AI-01_or74hj.png';
+
+    function isDark() { return document.documentElement.dataset.theme === 'dark'; }
+    function syncThemeLogos() {
+      const logoUrl = isDark() ? darkLogoUrl : lightLogoUrl;
+      document.querySelectorAll('[data-theme-logo]').forEach((img) => {
+        img.src = logoUrl;
+      });
+    }
+    function setTheme(dark) {
+      document.documentElement.dataset.theme = dark ? 'dark' : 'light';
+      localStorage.setItem('ado_theme', dark ? 'dark' : 'light');
+      document.getElementById('themeBtn').innerHTML = dark ? sunSvg : moonSvg;
+      syncThemeLogos();
+    }
+
+    // Init from storage (shared with ado-ai.html)
+    const savedTheme = localStorage.getItem('ado_theme');
+    if (savedTheme) setTheme(savedTheme === 'dark');
+    else setTheme(true); // default dark
+    // Update icon on load
+    document.getElementById('themeBtn').innerHTML = isDark() ? sunSvg : moonSvg;
+    syncThemeLogos();
+
+    document.getElementById('themeBtn').addEventListener('click', () => setTheme(!isDark()));
+
+    function tryPlayVideo(video) {
+      if (!video) return;
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(() => { });
+      }
+    }
+
+    function syncAmbientVideos() {
+      document.querySelectorAll('[data-autoplay-video]').forEach((video) => {
+        tryPlayVideo(video);
+      });
+    }
+
+    document.querySelectorAll('[data-autoplay-video]').forEach((video) => {
+      ['loadeddata', 'canplay', 'suspend'].forEach((eventName) => {
+        video.addEventListener(eventName, () => tryPlayVideo(video));
+      });
+    });
+
+    syncAmbientVideos();
+    window.addEventListener('pageshow', syncAmbientVideos);
+    window.addEventListener('focus', syncAmbientVideos);
+    document.addEventListener('visibilitychange', () => {
+      if (!document.hidden) syncAmbientVideos();
+    });
+    ['touchstart', 'pointerdown'].forEach((eventName) => {
+      window.addEventListener(eventName, syncAmbientVideos, { passive: true, once: true });
+    });
+
+    // ── Mobile menu ──
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    let menuOpen = false;
+
+    const menuSvg = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>`;
+    const closeSvg = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
+
+    mobileMenuBtn.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      mobileMenu.classList.toggle('open', menuOpen);
+      mobileMenuBtn.innerHTML = menuOpen ? closeSvg : menuSvg;
+    });
+
+    // ── Typewriter effect ──
+    const twPhrases = [
+      'ART de ONE AI is typing…',
+      'GPT-4.1 နှင့် စကားပြောနိုင်သည်',
+      'Claude Sonnet 4.6 ready…',
+      'Llama 3.3 70B — Free Plan',
+      'AI တစ်ခုတည်းနဲ့ အားလုံး…',
+    ];
+    let twIdx = 0, twChar = 0, twDeleting = false;
+    const twEl = document.getElementById('twText');
+    function typewriter() {
+      if (!twEl) return;
+      const phrase = twPhrases[twIdx];
+      if (!twDeleting) {
+        twEl.textContent = phrase.slice(0, ++twChar);
+        if (twChar === phrase.length) { twDeleting = true; setTimeout(typewriter, 1800); return; }
+      } else {
+        twEl.textContent = phrase.slice(0, --twChar);
+        if (twChar === 0) { twDeleting = false; twIdx = (twIdx + 1) % twPhrases.length; setTimeout(typewriter, 400); return; }
+      }
+      setTimeout(typewriter, twDeleting ? 35 : 65);
+    }
+    typewriter();
+
+    // ── Typing row show/hide loop ──
+    const typingRow = document.getElementById('typingRow');
+    if (typingRow) {
+      setInterval(() => {
+        typingRow.style.display = 'flex';
+        setTimeout(() => { typingRow.style.display = 'none'; }, 2200);
+      }, 5000);
+    }
+
+    // ── FAQ accordion ──
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const isOpen = answer.classList.contains('open');
+
+      // Close all
+      document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-btn').forEach(b => b.classList.remove('open'));
+
+      if (!isOpen) {
+        answer.classList.add('open');
+        btn.classList.add('open');
+      }
+    }
+
+    // ── Scroll Animation ──
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.fade-up').forEach(el => {
+      observer.observe(el);
+    });
+
+    // ── Future section scroll scale ──
+    const futureSection = document.querySelector('.laptop-section');
+    const pricingSection = document.querySelector('.pricing-section');
+    const futureMotionQuery = window.matchMedia('(max-width: 768px), (prefers-reduced-motion: reduce)');
+    let futureTicking = false;
+    let futurePricingTop = 0;
+    let futureStartOffset = 0;
+    let futureProgressRange = 1;
+
+    function setFutureProgress(value) {
+      if (!futureSection) return;
+      futureSection.style.setProperty('--future-progress', value.toFixed(4));
+    }
+
+    function recalculateFutureMetrics() {
+      if (!futureSection || !pricingSection) return;
+      futurePricingTop = window.scrollY + pricingSection.getBoundingClientRect().top;
+      futureStartOffset = window.innerHeight * 0.92;
+      const futureEndOffset = Math.max(window.innerHeight * 0.18, 120);
+      futureProgressRange = Math.max(futureStartOffset - futureEndOffset, 1);
+    }
+
+    function measureFutureProgress() {
+      if (!futureSection || !pricingSection) return 0;
+      const triggerPoint = window.scrollY + futureStartOffset;
+      return Math.min(Math.max((triggerPoint - futurePricingTop) / futureProgressRange, 0), 1);
+    }
+
+    function updateFutureStageProgress() {
+      if (!futureSection) return;
+      if (futureMotionQuery.matches) {
+        futureTicking = false;
+        setFutureProgress(0);
+        return;
+      }
+      const futureProgress = measureFutureProgress();
+      setFutureProgress(futureProgress);
+      futureTicking = false;
+    }
+
+    function requestFutureStageProgress() {
+      if (!futureSection || futureTicking || futureMotionQuery.matches) return;
+      futureTicking = true;
+      window.requestAnimationFrame(updateFutureStageProgress);
+    }
+
+    function syncFutureStageMotionMode() {
+      if (!futureSection) return;
+      if (futureMotionQuery.matches) {
+        futureTicking = false;
+        setFutureProgress(0);
+        return;
+      }
+      recalculateFutureMetrics();
+      requestFutureStageProgress();
+    }
+
+    syncFutureStageMotionMode();
+    window.addEventListener('scroll', requestFutureStageProgress, { passive: true });
+    window.addEventListener('resize', () => {
+      syncFutureStageMotionMode();
+    });
+    window.addEventListener('load', () => {
+      syncFutureStageMotionMode();
+    });
+    if (document.fonts && typeof document.fonts.ready?.then === 'function') {
+      document.fonts.ready.then(() => {
+        syncFutureStageMotionMode();
+      });
+    }
+    if (typeof futureMotionQuery.addEventListener === 'function') {
+      futureMotionQuery.addEventListener('change', syncFutureStageMotionMode);
+    } else if (typeof futureMotionQuery.addListener === 'function') {
+      futureMotionQuery.addListener(syncFutureStageMotionMode);
+    }
+
+
+    // ── Go to Chat (auth check) ──
+    window.goToChat = async function (e) {
+      if (e) e.preventDefault();
+      if (!window.supabaseClient) { window.location.href = 'login.html'; return; }
+      try {
+        const { data: { session } } = await window.supabaseClient.auth.getSession();
+        window.location.href = session ? 'ado-ai.html' : 'login.html';
+      } catch { window.location.href = 'login.html'; }
+    };
+
+    // ── Go to Signup (new users → register, existing → chat) ──
+    window.goToSignup = async function (e) {
+      if (e) e.preventDefault();
+      if (!window.supabaseClient) { window.location.href = 'register.html'; return; }
+      try {
+        const { data: { session } } = await window.supabaseClient.auth.getSession();
+        window.location.href = session ? 'ado-ai.html' : 'register.html';
+      } catch { window.location.href = 'register.html'; }
+    };
+
+    // ── Plan Actions ──
+    window.handlePlanAction = async function (planId) {
+      const { data: { session } } = await window.supabaseClient.auth.getSession();
+      if (!session) {
+        // Not logged in — go to register, remember chosen plan
+        localStorage.setItem('ado_pending_plan', planId);
+        window.location.href = `register.html?plan=${planId}`;
+        return;
+      }
+      // Logged in — go to ado-ai.html and open pricing modal for that plan
+      const planMap = { free: 0, student: 1, pro: 2, premium: 3, ultra: 4 };
+      const level = planMap[planId] ?? 1;
+      window.location.href = `ado-ai.html?upgrade=${level}`;
+    };
+
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu a:not(.nav-btn-signout)');
+    navLinks.forEach(link => {
+      link.addEventListener('click', function () {
+        navLinks.forEach(l => l.classList.remove('active'));
+        this.classList.add('active');
+
+        const href = this.getAttribute('href');
+        navLinks.forEach(l => {
+          if (l.getAttribute('href') === href) {
+            l.classList.add('active');
+          }
+        });
+      });
+    });
+  </script>
+
+  <script src="/js/shop-badge.js"></script>
+  <script type="module">
+    import { supabase } from './js/supabase.js';
+    window.supabaseClient = supabase;
+  </script>
+  <script type="module" src="/js/index-pricing.js"></script>
+  <script type="module" src="/js/nav-auth.js"></script>
+  <script>
+    fetch('footer.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-placeholder').innerHTML = data;
+        syncThemeLogos();
+      });
+  </script>
+</body>
+
+</html>
