@@ -457,9 +457,29 @@
       pointer-events: none;
     }
 
+    .hamburger-svg line {
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .hamburger-svg .line-top {
+      transform-origin: 12px 6px;
+    }
+    .hamburger-svg .line-bottom {
+      transform-origin: 12px 18px;
+    }
+    .nav-mobile-btn.open .line-top {
+      transform: translate(0, 6px) rotate(45deg);
+    }
+    .nav-mobile-btn.open .line-middle {
+      opacity: 0;
+      transform: scaleX(0);
+      transform-origin: 12px 12px;
+    }
+    .nav-mobile-btn.open .line-bottom {
+      transform: translate(0, -6px) rotate(-45deg);
+    }
+
     /* Mobile menu */
     .mobile-menu {
-      display: none;
       position: fixed;
       top: 72px;
       left: 16px;
@@ -474,9 +494,15 @@
       box-shadow: 0 12px 40px rgba(0, 0, 0, .12);
       padding: 16px 20px;
       z-index: 99;
+      display: flex;
       flex-direction: column;
       gap: 4px;
       overflow-y: auto;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-15px) scale(0.98);
+      transform-origin: top center;
+      transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.4s;
     }
 
     [data-theme="dark"] .mobile-menu {
@@ -486,8 +512,27 @@
     }
 
     .mobile-menu.open {
-      display: flex;
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0) scale(1);
     }
+
+    .mobile-menu > * {
+      opacity: 0;
+      transform: translateY(-15px);
+      transition: opacity 0.3s cubic-bezier(0.16, 1, 0.3, 1), transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .mobile-menu.open > * {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .mobile-menu.open > *:nth-child(1) { transition-delay: 0.05s; }
+    .mobile-menu.open > *:nth-child(2) { transition-delay: 0.1s; }
+    .mobile-menu.open > *:nth-child(3) { transition-delay: 0.15s; }
+    .mobile-menu.open > *:nth-child(4) { transition-delay: 0.2s; }
+    .mobile-menu.open > *:nth-child(5) { transition-delay: 0.25s; }
 
     .mobile-menu a,
     .mobile-menu button.mob-dd-btn {
@@ -847,7 +892,7 @@
       }
 
       .hero-title {
-        font-size: clamp(36px, 11vw, 60px);
+        font-size: clamp(42px, 13vw, 60px);
         line-height: 1.1;
       }
 
@@ -857,6 +902,11 @@
 
       .hero-title-word-accent::after {
         bottom: .14em;
+      }
+
+      .hero-actions .btn {
+        padding: 9px 20px;
+        font-size: 13px;
       }
     }
 
@@ -1775,7 +1825,7 @@
     .plan-top-box {
       border: 2px solid var(--pc-text, var(--p-text));
       border-radius: 24px;
-      padding: 40px 20px 32px;
+      padding: 24px 20px 24px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -1783,6 +1833,7 @@
       margin-bottom: 22px;
       margin-left: -12px;
       margin-right: -12px;
+      margin-top: -12px;
     }
 
     .plan-mascot {
@@ -1907,14 +1958,14 @@
       align-items: center;
       justify-content: center;
       border-radius: 50%;
-      background: rgba(34, 197, 94, 0.15);
-      color: #16a34a;
+      background: #04241c;
+      color: #b8e673;
       margin-top: 1px;
     }
 
     .plan-features-new li.disabled::before {
       content: '✕';
-      background: rgba(239, 68, 68, 0.1);
+      background: #04241c;
       color: #ef4444;
     }
 
@@ -3685,10 +3736,10 @@
         </div>
         <button class="nav-mobile-btn" id="mobileMenuBtn" aria-label="Menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round">
-            <line x1="3" y1="12" x2="21" y2="12" />
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <line x1="3" y1="18" x2="21" y2="18" />
+            stroke-linecap="round" class="hamburger-svg">
+            <line x1="3" y1="6" x2="21" y2="6" class="line-top" />
+            <line x1="3" y1="12" x2="21" y2="12" class="line-middle" />
+            <line x1="3" y1="18" x2="21" y2="18" class="line-bottom" />
           </svg>
         </button>
       </div>
@@ -3893,7 +3944,7 @@
             <div class="plan-top-box">
               <img src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271330/freeplan-cutebird_szerxx.svg"
                 alt="Free Mascot" class="plan-mascot">
-              <a href="ado-ai.html" class="plan-btn-new">အခမဲ့ စတင်အသုံးပြုမည်</a>
+              <a href="ado-ai.html" class="plan-btn-new">Get Free</a>
             </div>
 
             <div class="plan-name-new">Free</div>
@@ -3936,7 +3987,7 @@
             <div class="plan-top-box">
               <img src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271901/studentplan-cuteowl_khwy4k.svg"
                 alt="Student Mascot" class="plan-mascot">
-              <button class="plan-btn-new" onclick="handlePlanAction('student')">Student ယူမည်</button>
+              <button class="plan-btn-new" onclick="handlePlanAction('student')">Get Student</button>
             </div>
 
             <div class="plan-name-new">Student</div>
@@ -3979,14 +4030,13 @@
           </div>
 
           <!-- ── PRO (Popular) ── -->
-          <div class="plan-card popular relative fade-up delay-300" data-plan-card="pro"
+          <div class="plan-card fade-up delay-300" data-plan-card="pro"
             style="--pc-bg:#fef08a; --pc-text:#000000; --pc-btn-text:#ffffff; --pc-border-color:#fef08a; --pc-glow:rgba(254,240,138,.4);">
-            <div class="popular-badge" style="background:#000; color:#fff;">⭐ လူကြိုက်အများဆုံး</div>
 
-            <div class="plan-top-box" style="margin-top: 12px;">
+            <div class="plan-top-box">
               <img src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271901/pro-cutedog_n0mjkq.svg"
                 alt="Pro Mascot" class="plan-mascot">
-              <button class="plan-btn-new" onclick="handlePlanAction('pro')">Pro ယူမည်</button>
+              <button class="plan-btn-new" onclick="handlePlanAction('pro')">Get Pro</button>
             </div>
 
             <div class="plan-name-new">Pro</div>
@@ -4038,7 +4088,7 @@
             <div class="plan-top-box">
               <img src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271901/premium-cutebear_dxm7kq.svg"
                 alt="Premium Mascot" class="plan-mascot">
-              <button class="plan-btn-new" onclick="handlePlanAction('premium')">Premium ယူမည်</button>
+              <button class="plan-btn-new" onclick="handlePlanAction('premium')">Get Premium</button>
             </div>
 
             <div class="plan-name-new">Premium</div>
@@ -4086,7 +4136,7 @@
             <div class="plan-top-box">
               <img src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774271901/ultra-cutelion_bga9vv.svg"
                 alt="Ultra Mascot" class="plan-mascot">
-              <button class="plan-btn-new" onclick="handlePlanAction('ultra')">Ultra ယူမည်</button>
+              <button class="plan-btn-new" onclick="handlePlanAction('ultra')">Get Ultra</button>
             </div>
 
             <div class="plan-name-new">Ultra</div>
@@ -4898,13 +4948,10 @@
     const mobileMenu = document.getElementById('mobileMenu');
     let menuOpen = false;
 
-    const menuSvg = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>`;
-    const closeSvg = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>`;
-
     mobileMenuBtn.addEventListener('click', () => {
       menuOpen = !menuOpen;
       mobileMenu.classList.toggle('open', menuOpen);
-      mobileMenuBtn.innerHTML = menuOpen ? closeSvg : menuSvg;
+      mobileMenuBtn.classList.toggle('open', menuOpen);
     });
 
     // ── Typewriter effect ──
