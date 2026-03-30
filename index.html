@@ -93,6 +93,11 @@
       border-bottom-color: #d0d2ca;
     }
 
+    [data-theme="light"] .nav-links a.active,
+    [data-theme="light"] .mobile-menu a.active {
+      color: #04241c;
+    }
+
     /* ── Reset ── */
     *,
     *::before,
@@ -750,7 +755,7 @@
     .hero-title {
       font-family: 'Space Grotesk', 'DM Sans', sans-serif;
       font-weight: 800;
-      font-size: clamp(48px, 7.5vw, 88px);
+      font-size: clamp(48px, 9vw, 110px);
       line-height: 1.05;
       color: var(--text);
       margin-bottom: 24px;
@@ -834,7 +839,7 @@
 
     .hero-title em {
       font-style: italic;
-      font-family: Georgia, 'Instrument Serif', serif;
+      font-family: 'Instrument Serif', Georgia, serif;
       font-weight: 400;
       color: var(--accent);
       letter-spacing: -.02em;
@@ -3784,19 +3789,17 @@
   <!-- HERO -->
   <!-- ═══════════════════════════════════════════════════════════════ -->
   <section class="hero">
-    <video class="hero-video-bg" data-autoplay-video autoplay muted loop playsinline webkit-playsinline preload="auto">
-      <source src="https://res.cloudinary.com/dy7vubtji/video/upload/v1774454152/flower_compressed_rlfb88.mp4"
-        type="video/mp4">
-    </video>
+    <img class="hero-video-bg" src="https://res.cloudinary.com/dy7vubtji/image/upload/v1774799527/bg_o8dqbq.jpg" alt="Hero background">
     <div class="hero-inner fade-up">
 
-      <h1 class="hero-title" aria-label="One Platform, Every AI Model">
+      <h1 class="hero-title" aria-label="Work Smarter With Premium AI">
         <span class="hero-title-row">
-          <span class="hero-title-word" style="--word-delay:0.02s"><span>One</span></span>
-          <span class="hero-title-word" style="--word-delay:0.1s"><span>Platform,</span></span>
+          <span class="hero-title-word" style="--word-delay:0.02s"><span>Work</span></span>
+          <span class="hero-title-word" style="--word-delay:0.1s"><span>Smarter</span></span>
         </span>
         <span class="hero-title-row">
-          <span class="hero-title-word" style="--word-delay:0.28s"><em>Every AI model</em></span>
+          <span class="hero-title-word" style="--word-delay:0.22s"><span>With</span></span>
+          <span class="hero-title-word" style="--word-delay:0.28s"><em>Premium AI</em></span>
         </span>
       </h1>
 
